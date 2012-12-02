@@ -31,15 +31,15 @@ do
     #   Main Object (HTML)
     # ----------------------
     # Waiting for request for Main Object
-	echo ""
-	echo "Waiting for Main Object request"
+    echo ""
+    echo "Waiting for Main Object request"
     tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1
 
-	# Sending Main Object
+    # Sending Main Object
     randomLognormal 9.2788240598 0.0002182073       # Main Object Size: Mean=10710, S.D.=25032
-	echo ""
-	echo "Transfer Main Object of size $randomLognormalValueInteger Bytes"
-	tgRun "$TG_SENDER arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
+    echo ""
+    echo "Transfer Main Object of size $randomLognormalValueInteger Bytes"
+    tgRun "$TG_SENDER arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
 
     
     # -------------------

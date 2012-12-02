@@ -21,6 +21,7 @@ do
     echo "Request Size $randomLognormalValueInteger Bytes"
     tgRun "$TG_SENDER arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
     
+    
     # -------------------------------
     #   Wait for Main Object (HTML)
     # -------------------------------
