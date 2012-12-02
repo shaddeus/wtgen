@@ -1,4 +1,4 @@
 misib
 =====
 
-Homework for MI-SIB in CTU-FIT
+Homework for MI-SIB at CTU-FIT

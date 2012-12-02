@@ -1,0 +1,1343 @@
+   0  $accept : statements $end
+
+   1  statements : include statements
+   2             | commands
+
+   3  statement : include
+   4            | macro
+   5            | commands
+
+   6  include : INCLUDE STRING_LITERAL
+
+   7  macro : IDENTIFIER EQUAL integer
+
+   8  commands : start_time association_spec tg_entry_list
+
+   9  start_time : ON time_literal
+
+  10  association_spec : protocol_and_addresses quality_of_service
+
+  11  protocol_and_addresses : protocol ADDR
+  12                         | protocol ADDR SERVER
+  13                         | protocol ADDR ADDR
+
+  14  protocol : PROTOCOL
+
+  15  quality_of_service :
+  16                     | quality_of_service AVERAGE BANDWIDTH number
+  17                     | quality_of_service PEAK BANDWIDTH number
+  18                     | quality_of_service AVERAGE DELAY number
+  19                     | quality_of_service PEAK DELAY number
+  20                     | quality_of_service AVERAGE LOSS number
+  21                     | quality_of_service PEAK LOSS number
+  22                     | quality_of_service RCVWIN integer
+  23                     | quality_of_service SNDWIN integer
+  24                     | quality_of_service INTERACTIVE
+  25                     | quality_of_service INTERVAL number
+  26                     | quality_of_service MTU integer
+  27                     | quality_of_service TTL integer
+  28                     | quality_of_service TOS integer
+
+  29  tg_entry_list :
+  30                | tg_entry_list tg_entry
+
+  31  tg_entry : at_clause tg_action
+  32           | tg_action
+
+  33  at_clause : AT time_literal
+
+  34  tg_action : tg_action_setup
+  35            | tg_action_wait
+  36            | tg_action_log
+  37            | tg_action_arrival tg_action_length tg_action_modifier_list
+  38            | tg_action_arrival tg_action_length tg_action_resplen tg_action_modifier_list
+  39            | tg_action_arrival tg_action_length tg_action_resplen tg_action_patience tg_action_modifier_list
+
+  40  tg_action_setup : SETUP
+
+  41  tg_action_wait : WAIT
+  42                 | WAIT time_literal
+
+  43  tg_action_log : LOG STRING_LITERAL
+
+  44  tg_action_arrival : ARRIVAL distribution
+
+  45  tg_action_length : LENGTH distribution
+
+  46  tg_action_resplen : RESPONSELENGTH distribution
+
+  47  tg_action_patience : PATIENCE time_literal
+
+  48  tg_action_modifier_list :
+  49                          | tg_action_modifier_list tg_action_modifier
+
+  50  tg_action_modifier : DATA number
+  51                     | RESET
+  52                     | PACKET number
+  53                     | SEED integer
+  54                     | TIME time_literal
+
+  55  distribution : number
+  56               | DIST_CONST number
+  57               | DIST_EXP number
+  58               | DIST_EXP number number number
+  59               | DIST_MARKOV2 number distribution number distribution
+  60               | DIST_UNIFORM number
+  61               | DIST_UNIFORM number number
+
+  62  symbol : IDENTIFIER
+  63         | decimal_number
+  64         | number
+  65         | integer
+  66         | decimal_integer
+  67         | integer
+
+  68  time_literal : decimal_number
+  69               | decimal_integer ':' decimal_number
+  70               | decimal_integer ':' decimal_integer ':' decimal_number
+
+  71  decimal_number : FLOATING_POINT
+  72                 | decimal_integer
+
+  73  number : FLOATING_POINT
+  74         | integer
+
+  75  integer : HEX_INTEGER
+  76          | INTEGER
+  77          | OCTAL_INTEGER
+
+  78  decimal_integer : SMALL_INTEGER
+  79                  | INTEGER
+
+state 0
+	$accept : . statements $end  (0)
+
+	INCLUDE  shift 1
+	ON  shift 2
+	.  error
+
+	statements  goto 3
+	include  goto 4
+	commands  goto 5
+	start_time  goto 6
+
+
+state 1
+	include : INCLUDE . STRING_LITERAL  (6)
+
+	STRING_LITERAL  shift 7
+	.  error
+
+
+state 2
+	start_time : ON . time_literal  (9)
+
+	FLOATING_POINT  shift 8
+	INTEGER  shift 9
+	SMALL_INTEGER  shift 10
+	.  error
+
+	time_literal  goto 11
+	decimal_number  goto 12
+	decimal_integer  goto 13
+
+
+state 3
+	$accept : statements . $end  (0)
+
+	$end  accept
+
+
+state 4
+	statements : include . statements  (1)
+
+	INCLUDE  shift 1
+	ON  shift 2
+	.  error
+
+	statements  goto 14
+	include  goto 4
+	commands  goto 5
+	start_time  goto 6
+
+
+state 5
+	statements : commands .  (2)
+
+	.  reduce 2
+
+
+state 6
+	commands : start_time . association_spec tg_entry_list  (8)
+
+	PROTOCOL  shift 15
+	.  error
+
+	association_spec  goto 16
+	protocol_and_addresses  goto 17
+	protocol  goto 18
+
+
+state 7
+	include : INCLUDE STRING_LITERAL .  (6)
+
+	.  reduce 6
+
+
+state 8
+	decimal_number : FLOATING_POINT .  (71)
+
+	.  reduce 71
+
+
+state 9
+	decimal_integer : INTEGER .  (79)
+
+	.  reduce 79
+
+
+state 10
+	decimal_integer : SMALL_INTEGER .  (78)
+
+	.  reduce 78
+
+
+state 11
+	start_time : ON time_literal .  (9)
+
+	.  reduce 9
+
+
+state 12
+	time_literal : decimal_number .  (68)
+
+	.  reduce 68
+
+
+state 13
+	time_literal : decimal_integer . ':' decimal_number  (69)
+	time_literal : decimal_integer . ':' decimal_integer ':' decimal_number  (70)
+	decimal_number : decimal_integer .  (72)
+
+	':'  shift 19
+	$end  reduce 72
+	ARRIVAL  reduce 72
+	AT  reduce 72
+	DATA  reduce 72
+	LOG  reduce 72
+	SEED  reduce 72
+	SETUP  reduce 72
+	TIME  reduce 72
+	WAIT  reduce 72
+	PROTOCOL  reduce 72
+	PACKET  reduce 72
+	RESET  reduce 72
+
+
+state 14
+	statements : include statements .  (1)
+
+	.  reduce 1
+
+
+state 15
+	protocol : PROTOCOL .  (14)
+
+	.  reduce 14
+
+
+state 16
+	commands : start_time association_spec . tg_entry_list  (8)
+	tg_entry_list : .  (29)
+
+	.  reduce 29
+
+	tg_entry_list  goto 20
+
+
+state 17
+	association_spec : protocol_and_addresses . quality_of_service  (10)
+	quality_of_service : .  (15)
+
+	.  reduce 15
+
+	quality_of_service  goto 21
+
+
+state 18
+	protocol_and_addresses : protocol . ADDR  (11)
+	protocol_and_addresses : protocol . ADDR SERVER  (12)
+	protocol_and_addresses : protocol . ADDR ADDR  (13)
+
+	ADDR  shift 22
+	.  error
+
+
+state 19
+	time_literal : decimal_integer ':' . decimal_number  (69)
+	time_literal : decimal_integer ':' . decimal_integer ':' decimal_number  (70)
+
+	FLOATING_POINT  shift 8
+	INTEGER  shift 9
+	SMALL_INTEGER  shift 10
+	.  error
+
+	decimal_number  goto 23
+	decimal_integer  goto 24
+
+
+state 20
+	commands : start_time association_spec tg_entry_list .  (8)
+	tg_entry_list : tg_entry_list . tg_entry  (30)
+
+	ARRIVAL  shift 25
+	AT  shift 26
+	LOG  shift 27
+	SETUP  shift 28
+	WAIT  shift 29
+	$end  reduce 8
+
+	tg_entry  goto 30
+	at_clause  goto 31
+	tg_action  goto 32
+	tg_action_setup  goto 33
+	tg_action_wait  goto 34
+	tg_action_log  goto 35
+	tg_action_arrival  goto 36
+
+
+state 21
+	association_spec : protocol_and_addresses quality_of_service .  (10)
+	quality_of_service : quality_of_service . AVERAGE BANDWIDTH number  (16)
+	quality_of_service : quality_of_service . PEAK BANDWIDTH number  (17)
+	quality_of_service : quality_of_service . AVERAGE DELAY number  (18)
+	quality_of_service : quality_of_service . PEAK DELAY number  (19)
+	quality_of_service : quality_of_service . AVERAGE LOSS number  (20)
+	quality_of_service : quality_of_service . PEAK LOSS number  (21)
+	quality_of_service : quality_of_service . RCVWIN integer  (22)
+	quality_of_service : quality_of_service . SNDWIN integer  (23)
+	quality_of_service : quality_of_service . INTERACTIVE  (24)
+	quality_of_service : quality_of_service . INTERVAL number  (25)
+	quality_of_service : quality_of_service . MTU integer  (26)
+	quality_of_service : quality_of_service . TTL integer  (27)
+	quality_of_service : quality_of_service . TOS integer  (28)
+
+	AVERAGE  shift 37
+	INTERACTIVE  shift 38
+	INTERVAL  shift 39
+	MTU  shift 40
+	PEAK  shift 41
+	RCVWIN  shift 42
+	SNDWIN  shift 43
+	TOS  shift 44
+	TTL  shift 45
+	$end  reduce 10
+	ARRIVAL  reduce 10
+	AT  reduce 10
+	LOG  reduce 10
+	SETUP  reduce 10
+	WAIT  reduce 10
+
+
+state 22
+	protocol_and_addresses : protocol ADDR .  (11)
+	protocol_and_addresses : protocol ADDR . SERVER  (12)
+	protocol_and_addresses : protocol ADDR . ADDR  (13)
+
+	SERVER  shift 46
+	ADDR  shift 47
+	$end  reduce 11
+	ARRIVAL  reduce 11
+	AT  reduce 11
+	AVERAGE  reduce 11
+	INTERACTIVE  reduce 11
+	INTERVAL  reduce 11
+	LOG  reduce 11
+	MTU  reduce 11
+	PEAK  reduce 11
+	RCVWIN  reduce 11
+	SETUP  reduce 11
+	SNDWIN  reduce 11
+	TOS  reduce 11
+	TTL  reduce 11
+	WAIT  reduce 11
+
+
+state 23
+	time_literal : decimal_integer ':' decimal_number .  (69)
+
+	.  reduce 69
+
+
+state 24
+	time_literal : decimal_integer ':' decimal_integer . ':' decimal_number  (70)
+	decimal_number : decimal_integer .  (72)
+
+	':'  shift 48
+	$end  reduce 72
+	ARRIVAL  reduce 72
+	AT  reduce 72
+	DATA  reduce 72
+	LOG  reduce 72
+	SEED  reduce 72
+	SETUP  reduce 72
+	TIME  reduce 72
+	WAIT  reduce 72
+	PROTOCOL  reduce 72
+	PACKET  reduce 72
+	RESET  reduce 72
+
+
+state 25
+	tg_action_arrival : ARRIVAL . distribution  (44)
+
+	DIST_CONST  shift 49
+	DIST_EXP  shift 50
+	DIST_MARKOV2  shift 51
+	DIST_UNIFORM  shift 52
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 58
+	distribution  goto 59
+
+
+state 26
+	at_clause : AT . time_literal  (33)
+
+	FLOATING_POINT  shift 8
+	INTEGER  shift 9
+	SMALL_INTEGER  shift 10
+	.  error
+
+	time_literal  goto 60
+	decimal_number  goto 12
+	decimal_integer  goto 13
+
+
+state 27
+	tg_action_log : LOG . STRING_LITERAL  (43)
+
+	STRING_LITERAL  shift 61
+	.  error
+
+
+state 28
+	tg_action_setup : SETUP .  (40)
+
+	.  reduce 40
+
+
+state 29
+	tg_action_wait : WAIT .  (41)
+	tg_action_wait : WAIT . time_literal  (42)
+
+	FLOATING_POINT  shift 8
+	INTEGER  shift 9
+	SMALL_INTEGER  shift 10
+	$end  reduce 41
+	ARRIVAL  reduce 41
+	AT  reduce 41
+	LOG  reduce 41
+	SETUP  reduce 41
+	WAIT  reduce 41
+
+	time_literal  goto 62
+	decimal_number  goto 12
+	decimal_integer  goto 13
+
+
+state 30
+	tg_entry_list : tg_entry_list tg_entry .  (30)
+
+	.  reduce 30
+
+
+state 31
+	tg_entry : at_clause . tg_action  (31)
+
+	ARRIVAL  shift 25
+	LOG  shift 27
+	SETUP  shift 28
+	WAIT  shift 29
+	.  error
+
+	tg_action  goto 63
+	tg_action_setup  goto 33
+	tg_action_wait  goto 34
+	tg_action_log  goto 35
+	tg_action_arrival  goto 36
+
+
+state 32
+	tg_entry : tg_action .  (32)
+
+	.  reduce 32
+
+
+state 33
+	tg_action : tg_action_setup .  (34)
+
+	.  reduce 34
+
+
+state 34
+	tg_action : tg_action_wait .  (35)
+
+	.  reduce 35
+
+
+state 35
+	tg_action : tg_action_log .  (36)
+
+	.  reduce 36
+
+
+state 36
+	tg_action : tg_action_arrival . tg_action_length tg_action_modifier_list  (37)
+	tg_action : tg_action_arrival . tg_action_length tg_action_resplen tg_action_modifier_list  (38)
+	tg_action : tg_action_arrival . tg_action_length tg_action_resplen tg_action_patience tg_action_modifier_list  (39)
+
+	LENGTH  shift 64
+	.  error
+
+	tg_action_length  goto 65
+
+
+state 37
+	quality_of_service : quality_of_service AVERAGE . BANDWIDTH number  (16)
+	quality_of_service : quality_of_service AVERAGE . DELAY number  (18)
+	quality_of_service : quality_of_service AVERAGE . LOSS number  (20)
+
+	BANDWIDTH  shift 66
+	DELAY  shift 67
+	LOSS  shift 68
+	.  error
+
+
+state 38
+	quality_of_service : quality_of_service INTERACTIVE .  (24)
+
+	.  reduce 24
+
+
+state 39
+	quality_of_service : quality_of_service INTERVAL . number  (25)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 69
+
+
+state 40
+	quality_of_service : quality_of_service MTU . integer  (26)
+
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 70
+
+
+state 41
+	quality_of_service : quality_of_service PEAK . BANDWIDTH number  (17)
+	quality_of_service : quality_of_service PEAK . DELAY number  (19)
+	quality_of_service : quality_of_service PEAK . LOSS number  (21)
+
+	BANDWIDTH  shift 71
+	DELAY  shift 72
+	LOSS  shift 73
+	.  error
+
+
+state 42
+	quality_of_service : quality_of_service RCVWIN . integer  (22)
+
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 74
+
+
+state 43
+	quality_of_service : quality_of_service SNDWIN . integer  (23)
+
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 75
+
+
+state 44
+	quality_of_service : quality_of_service TOS . integer  (28)
+
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 76
+
+
+state 45
+	quality_of_service : quality_of_service TTL . integer  (27)
+
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 77
+
+
+state 46
+	protocol_and_addresses : protocol ADDR SERVER .  (12)
+
+	.  reduce 12
+
+
+state 47
+	protocol_and_addresses : protocol ADDR ADDR .  (13)
+
+	.  reduce 13
+
+
+state 48
+	time_literal : decimal_integer ':' decimal_integer ':' . decimal_number  (70)
+
+	FLOATING_POINT  shift 8
+	INTEGER  shift 9
+	SMALL_INTEGER  shift 10
+	.  error
+
+	decimal_number  goto 78
+	decimal_integer  goto 79
+
+
+state 49
+	distribution : DIST_CONST . number  (56)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 80
+
+
+state 50
+	distribution : DIST_EXP . number  (57)
+	distribution : DIST_EXP . number number number  (58)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 81
+
+
+state 51
+	distribution : DIST_MARKOV2 . number distribution number distribution  (59)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 82
+
+
+state 52
+	distribution : DIST_UNIFORM . number  (60)
+	distribution : DIST_UNIFORM . number number  (61)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 83
+
+
+state 53
+	number : FLOATING_POINT .  (73)
+
+	.  reduce 73
+
+
+state 54
+	integer : HEX_INTEGER .  (75)
+
+	.  reduce 75
+
+
+state 55
+	integer : INTEGER .  (76)
+
+	.  reduce 76
+
+
+state 56
+	integer : OCTAL_INTEGER .  (77)
+
+	.  reduce 77
+
+
+state 57
+	number : integer .  (74)
+
+	.  reduce 74
+
+
+state 58
+	distribution : number .  (55)
+
+	.  reduce 55
+
+
+state 59
+	tg_action_arrival : ARRIVAL distribution .  (44)
+
+	.  reduce 44
+
+
+state 60
+	at_clause : AT time_literal .  (33)
+
+	.  reduce 33
+
+
+state 61
+	tg_action_log : LOG STRING_LITERAL .  (43)
+
+	.  reduce 43
+
+
+state 62
+	tg_action_wait : WAIT time_literal .  (42)
+
+	.  reduce 42
+
+
+state 63
+	tg_entry : at_clause tg_action .  (31)
+
+	.  reduce 31
+
+
+state 64
+	tg_action_length : LENGTH . distribution  (45)
+
+	DIST_CONST  shift 49
+	DIST_EXP  shift 50
+	DIST_MARKOV2  shift 51
+	DIST_UNIFORM  shift 52
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 58
+	distribution  goto 84
+
+
+state 65
+	tg_action : tg_action_arrival tg_action_length . tg_action_modifier_list  (37)
+	tg_action : tg_action_arrival tg_action_length . tg_action_resplen tg_action_modifier_list  (38)
+	tg_action : tg_action_arrival tg_action_length . tg_action_resplen tg_action_patience tg_action_modifier_list  (39)
+	tg_action_modifier_list : .  (48)
+
+	RESPONSELENGTH  shift 85
+	$end  reduce 48
+	ARRIVAL  reduce 48
+	AT  reduce 48
+	DATA  reduce 48
+	LOG  reduce 48
+	SEED  reduce 48
+	SETUP  reduce 48
+	TIME  reduce 48
+	WAIT  reduce 48
+	PACKET  reduce 48
+	RESET  reduce 48
+
+	tg_action_modifier_list  goto 86
+	tg_action_resplen  goto 87
+
+
+state 66
+	quality_of_service : quality_of_service AVERAGE BANDWIDTH . number  (16)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 88
+
+
+state 67
+	quality_of_service : quality_of_service AVERAGE DELAY . number  (18)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 89
+
+
+state 68
+	quality_of_service : quality_of_service AVERAGE LOSS . number  (20)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 90
+
+
+state 69
+	quality_of_service : quality_of_service INTERVAL number .  (25)
+
+	.  reduce 25
+
+
+state 70
+	quality_of_service : quality_of_service MTU integer .  (26)
+
+	.  reduce 26
+
+
+state 71
+	quality_of_service : quality_of_service PEAK BANDWIDTH . number  (17)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 91
+
+
+state 72
+	quality_of_service : quality_of_service PEAK DELAY . number  (19)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 92
+
+
+state 73
+	quality_of_service : quality_of_service PEAK LOSS . number  (21)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 93
+
+
+state 74
+	quality_of_service : quality_of_service RCVWIN integer .  (22)
+
+	.  reduce 22
+
+
+state 75
+	quality_of_service : quality_of_service SNDWIN integer .  (23)
+
+	.  reduce 23
+
+
+state 76
+	quality_of_service : quality_of_service TOS integer .  (28)
+
+	.  reduce 28
+
+
+state 77
+	quality_of_service : quality_of_service TTL integer .  (27)
+
+	.  reduce 27
+
+
+state 78
+	time_literal : decimal_integer ':' decimal_integer ':' decimal_number .  (70)
+
+	.  reduce 70
+
+
+state 79
+	decimal_number : decimal_integer .  (72)
+
+	.  reduce 72
+
+
+state 80
+	distribution : DIST_CONST number .  (56)
+
+	.  reduce 56
+
+
+81: shift/reduce conflict (shift 53, reduce 57) on FLOATING_POINT
+81: shift/reduce conflict (shift 54, reduce 57) on HEX_INTEGER
+81: shift/reduce conflict (shift 55, reduce 57) on INTEGER
+81: shift/reduce conflict (shift 56, reduce 57) on OCTAL_INTEGER
+state 81
+	distribution : DIST_EXP number .  (57)
+	distribution : DIST_EXP number . number number  (58)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	$end  reduce 57
+	ARRIVAL  reduce 57
+	AT  reduce 57
+	DATA  reduce 57
+	LENGTH  reduce 57
+	LOG  reduce 57
+	PATIENCE  reduce 57
+	RESPONSELENGTH  reduce 57
+	SEED  reduce 57
+	SETUP  reduce 57
+	TIME  reduce 57
+	WAIT  reduce 57
+	PACKET  reduce 57
+	RESET  reduce 57
+
+	integer  goto 57
+	number  goto 94
+
+
+state 82
+	distribution : DIST_MARKOV2 number . distribution number distribution  (59)
+
+	DIST_CONST  shift 49
+	DIST_EXP  shift 50
+	DIST_MARKOV2  shift 51
+	DIST_UNIFORM  shift 52
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 58
+	distribution  goto 95
+
+
+83: shift/reduce conflict (shift 53, reduce 60) on FLOATING_POINT
+83: shift/reduce conflict (shift 54, reduce 60) on HEX_INTEGER
+83: shift/reduce conflict (shift 55, reduce 60) on INTEGER
+83: shift/reduce conflict (shift 56, reduce 60) on OCTAL_INTEGER
+state 83
+	distribution : DIST_UNIFORM number .  (60)
+	distribution : DIST_UNIFORM number . number  (61)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	$end  reduce 60
+	ARRIVAL  reduce 60
+	AT  reduce 60
+	DATA  reduce 60
+	LENGTH  reduce 60
+	LOG  reduce 60
+	PATIENCE  reduce 60
+	RESPONSELENGTH  reduce 60
+	SEED  reduce 60
+	SETUP  reduce 60
+	TIME  reduce 60
+	WAIT  reduce 60
+	PACKET  reduce 60
+	RESET  reduce 60
+
+	integer  goto 57
+	number  goto 96
+
+
+state 84
+	tg_action_length : LENGTH distribution .  (45)
+
+	.  reduce 45
+
+
+state 85
+	tg_action_resplen : RESPONSELENGTH . distribution  (46)
+
+	DIST_CONST  shift 49
+	DIST_EXP  shift 50
+	DIST_MARKOV2  shift 51
+	DIST_UNIFORM  shift 52
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 58
+	distribution  goto 97
+
+
+state 86
+	tg_action : tg_action_arrival tg_action_length tg_action_modifier_list .  (37)
+	tg_action_modifier_list : tg_action_modifier_list . tg_action_modifier  (49)
+
+	DATA  shift 98
+	SEED  shift 99
+	TIME  shift 100
+	PACKET  shift 101
+	RESET  shift 102
+	$end  reduce 37
+	ARRIVAL  reduce 37
+	AT  reduce 37
+	LOG  reduce 37
+	SETUP  reduce 37
+	WAIT  reduce 37
+
+	tg_action_modifier  goto 103
+
+
+state 87
+	tg_action : tg_action_arrival tg_action_length tg_action_resplen . tg_action_modifier_list  (38)
+	tg_action : tg_action_arrival tg_action_length tg_action_resplen . tg_action_patience tg_action_modifier_list  (39)
+	tg_action_modifier_list : .  (48)
+
+	PATIENCE  shift 104
+	$end  reduce 48
+	ARRIVAL  reduce 48
+	AT  reduce 48
+	DATA  reduce 48
+	LOG  reduce 48
+	SEED  reduce 48
+	SETUP  reduce 48
+	TIME  reduce 48
+	WAIT  reduce 48
+	PACKET  reduce 48
+	RESET  reduce 48
+
+	tg_action_modifier_list  goto 105
+	tg_action_patience  goto 106
+
+
+state 88
+	quality_of_service : quality_of_service AVERAGE BANDWIDTH number .  (16)
+
+	.  reduce 16
+
+
+state 89
+	quality_of_service : quality_of_service AVERAGE DELAY number .  (18)
+
+	.  reduce 18
+
+
+state 90
+	quality_of_service : quality_of_service AVERAGE LOSS number .  (20)
+
+	.  reduce 20
+
+
+state 91
+	quality_of_service : quality_of_service PEAK BANDWIDTH number .  (17)
+
+	.  reduce 17
+
+
+state 92
+	quality_of_service : quality_of_service PEAK DELAY number .  (19)
+
+	.  reduce 19
+
+
+state 93
+	quality_of_service : quality_of_service PEAK LOSS number .  (21)
+
+	.  reduce 21
+
+
+state 94
+	distribution : DIST_EXP number number . number  (58)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 107
+
+
+state 95
+	distribution : DIST_MARKOV2 number distribution . number distribution  (59)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 108
+
+
+state 96
+	distribution : DIST_UNIFORM number number .  (61)
+
+	.  reduce 61
+
+
+state 97
+	tg_action_resplen : RESPONSELENGTH distribution .  (46)
+
+	.  reduce 46
+
+
+state 98
+	tg_action_modifier : DATA . number  (50)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 109
+
+
+state 99
+	tg_action_modifier : SEED . integer  (53)
+
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 110
+
+
+state 100
+	tg_action_modifier : TIME . time_literal  (54)
+
+	FLOATING_POINT  shift 8
+	INTEGER  shift 9
+	SMALL_INTEGER  shift 10
+	.  error
+
+	time_literal  goto 111
+	decimal_number  goto 12
+	decimal_integer  goto 13
+
+
+state 101
+	tg_action_modifier : PACKET . number  (52)
+
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 112
+
+
+state 102
+	tg_action_modifier : RESET .  (51)
+
+	.  reduce 51
+
+
+state 103
+	tg_action_modifier_list : tg_action_modifier_list tg_action_modifier .  (49)
+
+	.  reduce 49
+
+
+state 104
+	tg_action_patience : PATIENCE . time_literal  (47)
+
+	FLOATING_POINT  shift 8
+	INTEGER  shift 9
+	SMALL_INTEGER  shift 10
+	.  error
+
+	time_literal  goto 113
+	decimal_number  goto 12
+	decimal_integer  goto 13
+
+
+state 105
+	tg_action : tg_action_arrival tg_action_length tg_action_resplen tg_action_modifier_list .  (38)
+	tg_action_modifier_list : tg_action_modifier_list . tg_action_modifier  (49)
+
+	DATA  shift 98
+	SEED  shift 99
+	TIME  shift 100
+	PACKET  shift 101
+	RESET  shift 102
+	$end  reduce 38
+	ARRIVAL  reduce 38
+	AT  reduce 38
+	LOG  reduce 38
+	SETUP  reduce 38
+	WAIT  reduce 38
+
+	tg_action_modifier  goto 103
+
+
+state 106
+	tg_action : tg_action_arrival tg_action_length tg_action_resplen tg_action_patience . tg_action_modifier_list  (39)
+	tg_action_modifier_list : .  (48)
+
+	.  reduce 48
+
+	tg_action_modifier_list  goto 114
+
+
+state 107
+	distribution : DIST_EXP number number number .  (58)
+
+	.  reduce 58
+
+
+state 108
+	distribution : DIST_MARKOV2 number distribution number . distribution  (59)
+
+	DIST_CONST  shift 49
+	DIST_EXP  shift 50
+	DIST_MARKOV2  shift 51
+	DIST_UNIFORM  shift 52
+	FLOATING_POINT  shift 53
+	HEX_INTEGER  shift 54
+	INTEGER  shift 55
+	OCTAL_INTEGER  shift 56
+	.  error
+
+	integer  goto 57
+	number  goto 58
+	distribution  goto 115
+
+
+state 109
+	tg_action_modifier : DATA number .  (50)
+
+	.  reduce 50
+
+
+state 110
+	tg_action_modifier : SEED integer .  (53)
+
+	.  reduce 53
+
+
+state 111
+	tg_action_modifier : TIME time_literal .  (54)
+
+	.  reduce 54
+
+
+state 112
+	tg_action_modifier : PACKET number .  (52)
+
+	.  reduce 52
+
+
+state 113
+	tg_action_patience : PATIENCE time_literal .  (47)
+
+	.  reduce 47
+
+
+state 114
+	tg_action : tg_action_arrival tg_action_length tg_action_resplen tg_action_patience tg_action_modifier_list .  (39)
+	tg_action_modifier_list : tg_action_modifier_list . tg_action_modifier  (49)
+
+	DATA  shift 98
+	SEED  shift 99
+	TIME  shift 100
+	PACKET  shift 101
+	RESET  shift 102
+	$end  reduce 39
+	ARRIVAL  reduce 39
+	AT  reduce 39
+	LOG  reduce 39
+	SETUP  reduce 39
+	WAIT  reduce 39
+
+	tg_action_modifier  goto 103
+
+
+state 115
+	distribution : DIST_MARKOV2 number distribution number distribution .  (59)
+
+	.  reduce 59
+
+
+Rules never reduced:
+	statement : include  (3)
+	statement : macro  (4)
+	statement : commands  (5)
+	macro : IDENTIFIER EQUAL integer  (7)
+	symbol : IDENTIFIER  (62)
+	symbol : decimal_number  (63)
+	symbol : number  (64)
+	symbol : integer  (65)
+	symbol : decimal_integer  (66)
+	symbol : integer  (67)
+
+
+State 81 contains 4 shift/reduce conflicts.
+State 83 contains 4 shift/reduce conflicts.
+
+
+48 terminals, 31 nonterminals
+80 grammar rules, 116 states

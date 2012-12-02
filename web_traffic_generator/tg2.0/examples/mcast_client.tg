@@ -1,0 +1,7 @@
+# The syntax is the same as that of udp_client.tg. The only difference here 
+# is that multicast support is in the form of being able to specify multicast
+# addresses. 
+on 0:15 udp 239.192.0.1.4322
+at 5 setup
+at 6 arrival constant 0.01 length constant 576
+time 20

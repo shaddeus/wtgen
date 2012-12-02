@@ -1,0 +1,13 @@
+# This file specifies the following to TG:
+# 1. At 15 secs open a UDP socket to send packets to the server waiting at 
+#    192.168.10.1 and port 4322 
+# 2. after 5 secs setup (times specified are relative to the start time - 
+#    15 secs here.)
+# 3. starting at time 6 secs send constant packets to the server with 
+#    interpacket transmission time being 0.01 secs ( == 100 packets/sec) 
+#    for 20 secs. 
+
+on 0:15 udp 192.168.10.1.4322
+at 5 setup
+at 6 arrival constant 0.01 length constant 576
+time 20

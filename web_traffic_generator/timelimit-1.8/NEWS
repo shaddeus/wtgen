@@ -1,0 +1,85 @@
+Change log for timelimit, the process time limit tool
+
+1.8		2011/04/13
+	- getopt() returns -1 on error, not EOF [roam]
+	- add a simple test suite compatible with Perl's TAP framework [roam]
+	- add the ability to specify signals by name and the -l
+	  command-line option to list the available signal names. [roam]
+	  Debian: #621775, suggested by [mats]
+
+1.7		2010/09/30
+	- implement microsecond wait time precision using setitimer(2)
+	  Debian: #597824, reported by [tomaszn]
+	- report the actual error condition if the waitpid() call fails [roam]
+	- do not allow SIGCHLD to interrupt waitpid() after the kill [roam]
+	- remove the warn() function that is never used even on platforms
+	  that lack the err(3) family of functions [tomaszn]
+	- remove the cvs_id string
+
+1.6		2010/06/26
+	- rename the ChangeLog to NEWS, since that's what it is [roam]
+	- honor CPPFLAGS [roam]
+
+1.5		2009/10/30
+	- add the '__dead2' definition for no-return functions
+	- add the '-p' flag to propagate information about the child
+	  process being terminated by a signal [teddy, roam]
+
+1.4		2008/11/12
+	- correct options parsing on GNU systems - do not let timelimit
+	  grab the option arguments passed to the executed program
+	  Debian: #505140, reported by John Hasler <jhasler@debian.org>
+
+1.3		2008/09/03
+	- fix the $Ringlet VCS keyword in the source files [roam]
+
+1.2		2008/08/22
+	- return the child process exit code instead of always exiting
+	  with 0 [cberg, roam]
+	- define _GNU_SOURCE to properly use the Linux header files [roam]
+
+1.1		2007/12/07
+	- move the manual page from section 8 to section 1 [mario]
+
+1.0		2007/11/28
+	- add an 'install' target to the Makefile [roam]
+	- build and install the gzipped manual page, too [roam]
+	- remove the TARGETS file that was never used as intended [roam]
+	- break the web-visible documentation out of the source tree [roam]
+	- add a two-clause BSD copyright to all files [roam]
+	- style fixes to the manual page [roam]
+	- attempt to create the installation directories [roam]
+
+1.0pre3		2001/06/09
+	- actually add the -q flag to the getopt() arguments (ARGH!) [roam]
+	- use envopts[] for time/sig variable setting (both env and cmdline)
+	  [roam]
+	- warn when no time/sig arguments specified, as suggested by alpha
+	  [roam]
+	- silence a few gcc warnings [roam]
+	- removed CC, CFLAGS initial settings from Makefile [alpha]
+
+1.0pre2		2001/05/21
+	- added the '-q' flag to not output messages about signals sent
+	  to the child process [roam]
+	- changed the execv() call to execvp(), so PATH is searched for
+	  the specified command, as suggested by alpha [roam]
+	- changed the default compiler to gcc, as suggested by alpha [roam]
+	- added timelimit.8 manpage [roam/alpha]
+	- added killtime/warntime/killsig/warnsig defaults [alpha]
+
+1.0pre1		2001/05/16 
+	- first rolled-together prerelease.
+
+Name tags:
+	roam	Peter Pentchev <roam@ringlet.net>
+	alpha	Karsten W Rohrbach <karsten@rohrbach.de>
+	mario	Mario Iseli <mario@debian.org>
+	cberg	Christoph Berg <myon@debian.org>
+	teddy	Teddy Hogeborn <teddy@fukt.bsnet.se>
+	tomaszn	Tomasz Nowak <nowak2000@poczta.onet.pl>
+	mats	Mats Erik Andersson <mats.andersson@gisladisker.se>
+
+Comments:	Peter Pentchev <roam@ringlet.net>
+
+$Ringlet$

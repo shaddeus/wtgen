@@ -1,0 +1,16 @@
+# This script uses the log splitting functionality of TG. A TG output
+# file is first generated with the user-specified name. This file 
+# contains all records till time 12 secs from start, at which that 
+# file is closed and another log file is started. The second log file
+# will have the name <prefix>.<id>.<suffix> with prefix and suffix
+# extracted from the original output file name specified and the id  
+# string is constructed from the output of strftime system call, invoked 
+# with "%D" as argument. 
+#
+on 0:15 udp 192.168.10.1.4322
+at 5 setup
+at 6 arrival exponential 0.1 length exponential 576
+time 5
+at 12 log "%D"
+at 21 arrival exponential 0.1 length exponential 576
+time 5

@@ -1,0 +1,45 @@
+
+This README is intended to be read by experimenters who would like to
+modify the code to suit their own experimental
+setup. 
+
+1. Compilation. First download the TG 2.0 source distribution
+<source link>. Executing
+
+       $gzip -d -c tg2.0.tar.gz | tar -xvf -
+or
+       $zcat tg2.0.tar.Z | tar  -xvf -
+or
+       $tar -xvf tg2.0.tar 
+
+will create the tg and dcat subdirectories in tg2.0/src. Executing
+gmake in the tg and dcat directories will generate the
+executables. Executing "gmake clean" will remove the all non-essential
+files created during compilation.
+
+TG should compile on most Unix -based platforms. Care has been taken
+to keep it as portable as possible and to avoid platform specific
+code. Minor modifications may be required in some cases. Lex or flex
+and Yacc are required for compilation, and should be used with
+backward compatbility enabled. The optional post processing script,
+gengraph.pl, requires perl.
+
+If you choose to modify the directory structure of the distribution,
+there is a path dependency between the tg and dcat directories. There is
+a symbolic link betwen a source file in the tg and dcat directories. The 
+makefile in the dcat directory has the tg directory in its include path.
+
+Installation.Executing
+
+      $gmake install
+
+on the command line in the individual directories of tg and dcat will
+compile the source, if necessary and install tg in appropriate platform 
+dependent bin subdirectory. For example "gmake install" in the tg directory on 
+a Linux platform will first generate a tg binary, and then copy it to
+the "../bin/linux/" directory.
+
+2. LEX/FLEX: There are subtle differences between lex and flex on the
+various platform. Enable "-l" option with flex to ensure full
+compatability. 
+

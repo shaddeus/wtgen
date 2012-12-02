@@ -1,0 +1,8 @@
+# This script instructs TG to execute in the server or the sink mode 
+# in which it only receives packets and records the information in the 
+# binary log file. TG is initialized at time 15 secs from the start, and 
+# starting at 1.1 secs after initialization it waits for clients to 
+# send data, but only for 100 secs. 
+# 
+on 0:15 tcp 0.0.0.0.4322 server 
+at 1.1 wait 100

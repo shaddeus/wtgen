@@ -1,0 +1,18 @@
+# This file specifies the following to TG:
+# 1. At 15 secs open a TCP socket to send packets to the server waiting at 
+#    192.168.10.1 and port 4322 
+# 2. at 5 secs connect to the server (time relative to the start time - 15 secs)
+# 3. starting at time 6 secs send exponentially varying-sized packets, with 
+#    mean size of 576 bytes, to the server with exponentially varying 
+#    interpacket transmission times with a mean of 0.02 secs ( == 50 
+#    packets/sec) for 20 secs. 
+# 4. Change phase at time 30 sec to send constant sized packets of 1024 bytes
+#    but exponentially varying interarrival times with mean of 0.01 secs. 
+#    This is executed for 20 secs before TG exits 
+
+on 0:15 tcp 0.0.0.0.4322
+at 5 setup
+at 6 arrival exponential 0.02 length exponential 576
+time 20
+at 30 arrival exponential 0.01 length constant 1024
+time 20

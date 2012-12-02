@@ -1,0 +1,12 @@
+#
+# Type of Service/QOS field depends on the OS support for setting
+# the TOS field in the IP header as specified in the RFC 791.
+#(e.g., # SunOS 4.4.1 does not support setting TOS field). A subset 
+# of the bits from the original TOS field are currently used for 
+# supporting Differentiated Services. See RFC 2474
+#
+on 0:15 udp 192.168.10.1.4322 
+tos 30 
+at 5 setup
+at 6 arrival constant 0.01 length constant 576
+time 5

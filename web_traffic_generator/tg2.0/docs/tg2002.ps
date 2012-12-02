@@ -1,0 +1,5773 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%DocumentNeedsFonts: (atend)
+%%DocumentSuppliedFonts: (atend)
+%%Creator: Frame 5.5
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 5.5, for use with Adobe Unix Frame 5.5 products
+%
+% This ps_prolog file is Copyright (c) 1986-1996 Adobe Systems, Incoporated.
+% All rights reserved.  This ps_prolog file may be freely copied and 
+% distributed in conjunction with documents created using FrameMaker, 
+% FrameMaker+SGML, FrameReader, and FrameViewer as long as this 
+% copyright notice is preserved.
+/FMDocSave save def
+%
+% FrameMaker users specify the proper paper size for each print job in the
+% "Print" dialog's "Printer Paper Size" "Width" and "Height~ fields.  If the
+% printer that the PS file is sent to does not support the requested paper
+% size, or if there is no paper tray of the proper size currently installed, 
+% then the job will not be printed.  The following flag, if set to true, will
+% cause the job to print on the default paper in such cases.
+/FMAllowPaperSizeMismatch            false def
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to true, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% The following is a set of predefined optimal frequencies and angles for various
+% common dpi settings. This is taken from "Advances in Color Separation Using
+% PostScript Software Technology," from Adobe Systems (3/13/89 P.N. LPS 0043)
+% and corrolated with information which is in various PPD (4.0) files.
+%
+% The "dpiranges" figure is the minimum dots per inch device resolution which
+% can support this setting. The "low" and "high" values are controlled by the
+% setting of the FMUseHighFrequencyScreens flag above. The "TDot" flags control
+% the use of the "Yellow Triple Dot" feature whereby the frequency id divided by
+% three, but the dot function is "trippled" giving a block of 3x3 dots per cell.
+%
+% PatFreq is a compromise pattern frequency for ps Level 2 printers which is close
+% to the ideal WYSIWYG pattern frequency of 9 repetitions/inch but does not beat
+% (too badly) against the screen frequencies of any separations for that DPI.
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (5.5) def 
+/fMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	fMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	2 copy exch = = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto show
+	72 220 moveto show
+	FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Adobe Frame product version does not match ps_prolog!  Check installation;)
+		(also check ~/fminit and ./fminit for old versions) FMFAILURE
+		} if
+	} def 
+/fmConcatProcs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin [
+	/ALDsave
+	/FMdicttop
+	/FMoptop
+	/FMpointsize
+	/FMsetsize
+	/FMsaveobject
+	/b
+	/bitmapsave
+	/blut
+	/bpside
+	/bs
+	/bstring
+	/bwidth
+	/c
+	/cf
+	/cs
+	/cynu
+	/depth
+	/edown
+	/fh
+	/fillvals
+	/fw
+	/fx
+	/fy
+	/g
+	/gfile
+	/gindex
+	/grnt
+	/gryt
+	/gstring
+	/height
+	/hh
+	/i
+	/im
+	/indx
+	/is
+	/k
+	/kk
+	/landscape
+	/lb
+	/len
+	/llx
+	/lly
+	/m
+	/magu
+	/manualfeed
+	/n
+	/offbits
+	/onbits
+	/organgle
+	/orgbangle
+	/orgbfreq
+	/orgbproc
+	/orgbxfer
+	/orgfreq
+	/orggangle
+	/orggfreq
+	/orggproc
+	/orggxfer
+	/orghalftone
+	/orgmatrix
+	/orgproc
+	/orgrangle
+	/orgrfreq
+	/orgrproc
+	/orgrxfer
+	/orgxfer
+	/pagesave
+	/paperheight
+	/papersizedict
+	/paperwidth
+	/pos
+	/pwid
+	/r
+	/rad
+	/redt
+	/sl
+	/str
+	/tran
+	/u
+	/urx
+	/ury
+	/val
+	/width
+	/width
+	/ws
+	/ww
+	/x
+	/x1
+	/x2
+	/xindex
+	/xpoint
+	/xscale
+	/xx
+	/y
+	/y1
+	/y2
+	/yelu
+	/yindex
+	/ypoint
+	/yscale
+	/yy
+	/tintGray
+] { 0 def } forall
+/FmBD {bind def} bind def
+systemdict /pdfmark known systemdict /currentdistillerparams known and {
+	/fMAcrobat true def
+	
+	/FmPD /pdfmark load def
+	
+	
+	/FmPT /show load def
+	
+	
+	currentdistillerparams /CoreDistVersion get 2000 ge {
+	
+		
+		/FmPD2 /pdfmark load def
+		
+		
+		
+		
+		
+		/FmPA { mark exch /Dest exch 5 3 roll 
+				/View [ /XYZ null 6 -2 roll FmDC exch pop null] /DEST FmPD 
+		}FmBD
+	} {
+		
+		/FmPD2 /cleartomark load def
+		/FmPA {pop pop pop}FmBD
+	} ifelse
+} {
+	
+	/fMAcrobat false def
+	/FmPD /cleartomark load def
+	/FmPD2 /cleartomark load def
+	/FmPT /pop load def
+	/FmPA {pop pop pop}FmBD
+} ifelse
+/FmDC {
+	transform fMDefaultMatrix defaultmatrix itransform cvi exch cvi exch
+}FmBD
+/FmBx {
+	dup 3 index lt {3 1 roll exch} if 
+	1 index 4 index lt {4 -1 roll 3 1 roll exch 4 1 roll} if
+}FmBD
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/fMNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 1] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		RealSetrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+fMLevel1 { 
+	
+	
+	
+	/patScreenDict 7 dict dup begin
+		<0f1e3c78f0e1c387> [ 45  { pop } {exch pop} 		.5   2 sqrt] FmBD
+		<0f87c3e1f0783c1e> [ 135 { pop } {exch pop}			.5   2 sqrt] FmBD
+		<cccccccccccccccc> [ 0   { pop } dup				.5   2	   ] FmBD
+		<ffff0000ffff0000> [ 90  { pop } dup				.5   2	   ] FmBD
+		<8142241818244281> [ 45  { 2 copy lt {exch} if pop}	dup .75  2 sqrt] FmBD
+		<03060c183060c081> [ 45  { pop } {exch pop}			.875 2 sqrt] FmBD
+		<8040201008040201> [ 135 { pop } {exch pop}			.875 2 sqrt] FmBD
+	end def
+} { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} ifelse
+/tintCMYK {
+	1 tintGray sub FrameCurColors 0 4 getinterval aload pop 	
+	4 index mul 5 1 roll										
+	3 index mul 5 1 roll										
+	2 index mul 5 1 roll										
+	mul 4 1 roll												
+}bind def
+/tintRGB {
+	1 tintGray sub FrameCurColors 4 3 getinterval aload pop 	
+	1 exch sub 3 index mul 1 exch sub 4 1 roll					
+	1 exch sub 2 index mul 1 exch sub 4 1 roll					
+	1 exch sub mul 1 exch sub 3 1 roll							
+}bind def
+/combineColor {
+	/tintGray 1 1 FrameCurGray sub FrameCurColors 7 get mul sub def
+    FrameSepIs FMnone eq
+	{
+		graymode fMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			tintCMYK FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				tintGray RealSetgray
+			} {
+				fMAcrobat not FMPColor graymode and and {
+					tintCMYK
+					RealSetcmykcolor
+				} {
+					tintRGB
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ tintGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{tintGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop tintGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop tintGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop tintGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode fMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not fMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/fMDefaultMatrix matrix def
+/fMatrix2 matrix def
+/dpi    72 0 fMDefaultMatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 fMDefaultMatrix defaultmatrix dtransform exch atan def
+	sangle fMatrix2 rotate 
+	fMDefaultMatrix defaultmatrix fMatrix2 concatmatrix 
+	dup 0 get /sflipx exch def
+	    3 get /sflipy exch def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	fMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	fMLevel1 {
+		FMPColor {
+			orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+		}
+		{
+			orgxfer cvx settransfer
+		} ifelse
+		orgfreq organgle orgproc cvx setscreen
+	} {
+		orghalftone sethalftone
+	}ifelse
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	dup 1 gt {/#copies exch def} {pop} ifelse
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /fMNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	fMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{papersizefailure} if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{2 dict
+		 dup /PageSize [paperwidth paperheight] put
+		 manualfeed {dup /ManualFeed manualfeed put} if
+		 {setpagedevice} stopped {papersizefailure} if
+		}
+	ifelse 
+	
+	fMLevel1 not {
+		/orghalftone currenthalftone def
+	}if 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			fMNegative {
+				1 1 4 { 
+					pop { 1 exch sub } fmConcatProcs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		fMNegative {
+			{ 1 exch sub } fmConcatProcs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/FMENDDOCUMENT {
+	FMDocSave restore	
+} def
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature: *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	
+	mark
+	statusdict begin 
+		/setpageparams where {
+			pop
+			paperwidth paperheight 0 1 
+			{setpageparams} stopped 
+		} { 
+			true 
+		} ifelse
+		
+		{
+			
+			/setpagedevice where {
+				pop 
+				1 dict dup begin
+					/PageSize [ paperwidth paperheight ] def
+				end 
+				{setpagedevice} stopped
+			} {
+				true	
+			} ifelse
+		} {
+			false		
+		} ifelse 
+	end
+	{cleartomark true}{cleartomark false}ifelse
+} bind def
+/papersizefailure {
+	FMAllowPaperSizeMismatch not
+		{
+(The requested paper size is not available in any currently-installed tray)
+(Edit the PS file to "FMAllowPaperSizeMismatch true" to use default tray)
+		 FMFAILURE } if
+	} def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	/BEGINBITMAPCMYK { 
+		BITMAPCMYK } def
+	/BEGINBITMAPCMYKc { 
+		BITMAPCMYKc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	/BEGINBITMAPCMYK { 
+		BITMAPCMYKGRAY } def
+	/BEGINBITMAPCMYKc { 
+		BITMAPCMYKGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		8 1 roll
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+		8 -1 roll
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+fMLevel1 {
+	/fmGetFlip {
+		fMatrix2 exch get mul 0 lt { -1 } { 1 } ifelse
+	} FmBD
+} if
+/setPatternMode {
+	fMLevel1 {
+		2 index patScreenDict exch known {
+			pop pop
+			patScreenDict exch get aload pop 
+			freq 								
+			mul									
+			5 2 roll							
+			fMatrix2 currentmatrix 1 get 0 ne {
+				3 -1 roll 90 add 3 1 roll 		
+				sflipx 1 fmGetFlip sflipy 2 fmGetFlip neg mul
+			} {  								
+				sflipx 0 fmGetFlip sflipy 3 fmGetFlip mul 
+			} ifelse
+			0 lt {exch pop} {pop} ifelse 		
+			fMNegative { 
+				{neg} fmConcatProcs 			
+			} if
+			bind
+			
+			
+			
+			systemdict /setscreen get exec		
+			/FrameCurGray exch def
+		} {
+			/bwidth  exch def
+			/bpside  exch def
+			/bstring exch def
+			/onbits 0 def  /offbits 0 def
+			freq sangle landscape {90 add} if 
+				{/ypoint exch def
+				 /xpoint exch def
+				 /xindex xpoint 1 add 2 div bpside mul cvi def
+				 /yindex ypoint 1 add 2 div bpside mul cvi def
+				 bstring yindex bwidth mul xindex 8 idiv add get
+				 1 7 xindex 8 mod sub bitshift and 0 ne fMNegative {not} if
+				 {/onbits  onbits  1 add def 1}
+				 {/offbits offbits 1 add def 0}
+				 ifelse
+				}
+				setscreen
+			offbits offbits onbits add dup 0 ne {div} {pop pop .5} ifelse fMNegative {1.0 exch sub} if
+			/FrameCurGray exch def
+		} ifelse
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		fMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode fMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode fMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+/F { 
+	FMfonts exch get
+	[FMsetsize 0 0 FMpointsize 0 0] makefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	/FMsetsize FMpointsize def
+	F 
+	} bind def
+/QQ { 
+	/FMsetsize exch def
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	2 copy 0.0 0.0 1.0 5 3 roll arc 
+	round cvi 360 mod exch round cvi 360 mod eq {closepath} if 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/rip4 { 
+	   
+	  
+	  kis cis copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  cis mis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  mis yis copy pop 
+	  dup dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  yis kis copy pop 
+	  3 mul is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+/wbytes { 
+      dup dup
+      8 gt { pop 8 idiv mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/cvtProc exch def
+	/depth exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	cvtProc                
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	width height depth [width 0 0 height neg 0 height] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/cvtProc exch def
+	/depth exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/bitmapsave save def 
+	cvtProc              
+	/is width depth wbytes string def
+	/cf currentfile def 
+	width height depth [width 0 0 height neg 0 height] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+fMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/kk cynu magu min yelu min def
+		/u kk currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 kk currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch fmConcatProcs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/depth 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/bitmapsave save def
+	fMLevel1 {	
+		colorsetup
+		/is width depth wbytes string def
+		/cf currentfile def 
+		width height depth [width 0 0 height neg 0 height] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is width depth wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width width def
+			/Height height def
+			/ImageMatrix [width 0 0 height neg 0 height] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent depth def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/depth 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	fMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		width height depth [width 0 0 height neg 0 height] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width width def
+			/Height height def
+			/ImageMatrix [width 0 0 height neg 0 height] def
+			/DataSource {ip} bind def
+			/BitsPerComponent depth def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/depth 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 width getinterval def	
+	/gis im width width getinterval def	
+	/bis im width 2 mul width getinterval def 
+        
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	width height 8 [width 0 0 height neg 0 height] 
+	{width rip pop ris} {gis} {bis} true 3 colorimage
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCMYKc { 
+	/depth 32 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/cis im 0 width getinterval def	
+	/mis im width width getinterval def	
+	/yis im width 2 mul width getinterval def 
+	/kis im width 3 mul width getinterval def 
+        
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	width height 8 [width 0 0 height neg 0 height] 
+	{width rip4 pop cis} {mis} {yis} {kis} true 4 colorimage
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /gis width string def
+        /bis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPCMYK { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /mis width string def
+        /yis width string def
+        /kis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop } 
+        { cf mis readhexstring pop } 
+        { cf yis readhexstring pop } 
+        { cf kis readhexstring pop } 
+        true 4 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/depth 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 width getinterval def	
+	/gis im width width getinterval def	
+	/bis im width 2 mul width getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        {width rip pop ris gis bis width gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPCMYKGRAYc { 
+	/depth 32 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/cis im 0 width getinterval def	
+	/mis im width width getinterval def	
+	/yis im width 2 mul width getinterval def 
+	/kis im width 3 mul width getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        {width rip pop cis mis yis kis width cgray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/cgray { 
+        /ww exch def
+        /k exch def
+        /y exch def
+        /m exch def
+        /c exch def
+        0 1 ww 1 sub { /i exch def c i get m i get y i get k i get CMYKtoRGB
+				.144 mul 3 1 roll .587 mul 3 1 roll .299 mul add add
+				c i 3 -1 roll floor cvi put } for
+        c
+ 		} bind def
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /gis width string def
+        /bis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop width gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPCMYKGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /yis width string def
+        /mis width string def
+        /kis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop 
+          cf mis readhexstring pop 
+          cf yis readhexstring pop 
+          cf kis readhexstring pop width cgray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(5.5) FMVERSION
+1 1 0 0 612 792 0 1 17 FMDOCUMENT
+%%IncludeFont: Helvetica-Bold
+0 0 /Helvetica-Bold FMFONTDEFINE
+%%IncludeFont: Helvetica
+1 0 /Helvetica FMFONTDEFINE
+%%IncludeFont: Times-Roman
+2 0 /Times-Roman FMFONTDEFINE
+%%IncludeFont: Courier-Bold
+3 0 /Courier-Bold FMFONTDEFINE
+%%IncludeFont: Times-Italic
+4 0 /Times-Italic FMFONTDEFINE
+%%IncludeFont: Courier-BoldOblique
+5 0 /Courier-BoldOblique FMFONTDEFINE
+%%IncludeFont: Courier
+6 0 /Courier FMFONTDEFINE
+%%IncludeFont: Times-Bold
+7 0 /Times-Bold FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "0" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+J
+72 749 540 767 R
+7 X
+V
+72 902/G464 FmPA
+71 9 539 36 R
+V
+71 172/G465 FmPA
+144 680/G613 FmPA
+0 24 Q
+0 X
+(Traffic Generator Software) 186.13 449 T
+144 593/G633 FmPA
+(Release Notes) 255.47 420 T
+144 513/G1499 FmPA
+1 14 Q
+(Paul E. McKenney) 297.92 319.67 T
+144 464/G621 FmPA
+(Dan Y. Lee) 320.48 287.67 T
+144 432/G628 FmPA
+(Barbara A. Denny) 299.86 255.67 T
+144 400/G629 FmPA
+(SRI International and USC/ISI Postel Center for Experimental) 165.25 206.67 T
+144 351/G639 FmPA
+(Networking) 320.49 157.67 T
+144 302/G1521 FmPA
+(January 8, 2002) 305.3 108.67 T
+144 253/G623 FmPA
+[/Creator(FrameMaker xm5.5P4f)/DOCINFO FmPD2
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.0/DEST FmPD2
+[/Dest/F/DEST FmPD2
+FMENDPAGE
+%%EndPage: "0" 1
+%%Page: "1" 2
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+72 902/G446 FmPA
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(1) 302.66 55 T
+216 199/G450 FmPA
+216 151/G451 FmPA
+387 211/G455 FmPA
+0 14 Q
+(1) 241.55 710.88 T
+(INTRODUCTION) 263.34 710.88 T
+72 855/G610 FmPA
+2 12 Q
+(This document describes a packet Traffic Generator \050TG\051 program that can be used to) 96 680.22 T
+72 824/G24 FmPA
+(characterize the performance of packet-switched network communication protocols. The TG) 72 656.22 T
+(program generates and receives one-way packet traffic streams transmitted from the UNIX* user) 72 632.22 T
+(level process between traffic source and traffic sink nodes in a network. Different protocols, or) 72 608.22 T
+(versions of the same protocol, may be tested to ascertain differences in performance.) 72 584.22 T
+(The TG program is controlled by a simple, but flexible, specification language that allows) 96 558.22 T
+72 702/G123 FmPA
+(access to different operating modes, protocols, addressing functions, and experimentation with) 72 534.22 T
+(traffic) 72 510.22 T
+(parameters.) 103.68 510.22 T
+(The) 161.68 510.22 T
+(specification) 182.7 510.22 T
+(language) 246.38 510.22 T
+(allows) 292.07 510.22 T
+(traffic) 325.76 510.22 T
+(of) 357.44 510.22 T
+(several) 369.79 510.22 T
+(different) 406.14 510.22 T
+(packet) 449.82 510.22 T
+(lengths) 483.5 510.22 T
+(and) 520.53 510.22 T
+(interarrival time distributions to be generated. In the current implementation, the TCP and UDP) 72 486.22 T
+(transport) 72 462.22 T
+(protocols,) 116.99 462.22 T
+(with) 166.98 462.22 T
+(unicast) 190.65 462.22 T
+(and) 226.98 462.22 T
+(multicast) 246.63 462.22 T
+(addressing) 292.97 462.22 T
+(\050UDP) 346.62 462.22 T
+(only\051,) 376.95 462.22 T
+(are) 407.61 462.22 T
+(supported.) 424.59 462.22 T
+(The) 477.25 462.22 T
+(scope) 498.24 462.22 T
+(of) 527.89 462.22 T
+(a) 72 438.22 T
+(multicast) 79.99 438.22 T
+(flow) 126.66 438.22 T
+(can) 151.32 438.22 T
+(be) 170.64 438.22 T
+(controlled) 184.63 438.22 T
+(by) 235.95 438.22 T
+(setting) 250.61 438.22 T
+(the) 285.28 438.22 T
+(time-to-live) 302.61 438.22 T
+(\050TTL\051) 361.94 438.22 T
+(field.) 394.59 438.22 T
+(Quality/Type) 422.25 438.22 T
+(of) 488.91 438.22 T
+(Service) 501.57 438.22 T
+(parameters include setting the DiffServ field\240 and controlling the send and receive buffers.) 72 414.22 T
+(While the name \322Traffic Generator\323 focuses on the packet generator aspect of the program,) 96 388.22 T
+72 532/G124 FmPA
+(the) 72 364.22 T
+(TG) 89.27 364.22 T
+(program) 107.88 364.22 T
+(also) 151.15 364.22 T
+(serves) 173.09 364.22 T
+(as) 205.69 364.22 T
+(a) 218.29 364.22 T
+(traffic) 226.23 364.22 T
+(sink.) 258.16 364.22 T
+(In) 283.77 364.22 T
+(order) 296.38 364.22 T
+(to) 324.31 364.22 T
+(record) 336.25 364.22 T
+(packet) 369.51 364.22 T
+(transmission) 403.44 364.22 T
+(statistics,) 466.72 364.22 T
+(a) 513.67 364.22 T
+(TG) 521.61 364.22 T
+(configured) 72 340.22 T
+(as) 126.87 340.22 T
+(a) 139.76 340.22 T
+(traffic) 147.98 340.22 T
+(sink) 180.18 340.22 T
+(must) 203.08 340.22 T
+(be) 229.31 340.22 T
+(active) 243.53 340.22 T
+(to) 275.07 340.22 T
+(receive) 287.3 340.22 T
+(the) 324.83 340.22 T
+(test) 342.39 340.22 T
+(traffic.) 361.94 340.22 T
+(The) 397.15 340.22 T
+(received) 418.7 340.22 T
+(traffic) 462.23 340.22 T
+(stream) 494.44 340.22 T
+(is) 529.32 340.22 T
+(logged in a file by the traffic sink for post-test analysis. When connection-oriented transport) 72 316.22 T
+(services) 72 292.22 T
+(are) 112.79 292.22 T
+(used,) 129.58 292.22 T
+(a) 156.71 292.22 T
+(traffic) 164.18 292.22 T
+(sink) 195.63 292.22 T
+(is) 217.77 292.22 T
+(needed) 227.91 292.22 T
+(to) 264.04 292.22 T
+(accept) 275.51 292.22 T
+(an) 308.29 292.22 T
+(incoming) 321.76 292.22 T
+(connection) 369.23 292.22 T
+(request.) 424.03 292.22 T
+(The) 463.82 292.22 T
+(TG) 484.62 292.22 T
+(serving) 502.75 292.22 T
+(as the traffic source always logs datagram transmit times. This mode of operation may be useful) 72 268.22 T
+(for analyzing network blocking characteristics or for loading a network.) 72 244.22 T
+(Depending upon whether connection-oriented or connectionless transport services are used,) 96 218.22 T
+72 362/G125 FmPA
+(one) 72 194.22 T
+(or) 91.64 194.22 T
+(more) 103.94 194.22 T
+(traffic) 130.92 194.22 T
+(sinks) 162.54 194.22 T
+(may) 189.53 194.22 T
+(be) 212.5 194.22 T
+(needed.) 226.14 194.22 T
+(For) 265.43 194.22 T
+(datagram) 284.41 194.22 T
+(protocols) 331.38 194.22 T
+(like) 378.35 194.22 T
+(UDP,) 398.66 194.22 T
+(multiple) 427.97 194.22 T
+(traffic) 470.29 194.22 T
+(sources) 501.92 194.22 T
+(may) 72 170.22 T
+(send) 95.6 170.22 T
+(their) 120.54 170.22 T
+(traffic) 145.48 170.22 T
+(to) 177.73 170.22 T
+(the) 190.01 170.22 T
+(same) 207.61 170.22 T
+(sink) 235.21 170.22 T
+(process) 258.16 170.22 T
+(\050a) 297.08 170.22 T
+(many-to-one) 309.35 170.22 T
+(relationship\051.) 373.61 170.22 T
+(The) 440.21 170.22 T
+(TG) 461.81 170.22 T
+(serving) 480.74 170.22 T
+(as) 519.01 170.22 T
+(a) 531.95 170.22 T
+(traffic sink logs all received datagrams.) 72 146.22 T
+72 126 540.22 141 C
+0 0 0 1 0 0 0 1 K
+71 133 215 133 2 L
+0.5 H
+2 Z
+0 X
+N
+0 0 612 792 C
+0 0 0 1 0 0 0 1 K
+2 10 Q
+0 X
+(*UNIX is a re) 72 119.33 T
+(gistered trademark of UNIX System Laboratories, Inc.) 128.22 119.33 T
+72 263/G122 FmPA
+(\240The) 72 107.33 T
+(Dif) 94.86 107.33 T
+(fServ) 107.94 107.33 T
+(\336eld) 131.92 107.33 T
+(is) 152.01 107.33 T
+(set) 161 107.33 T
+(by) 174.42 107.33 T
+(calling) 186.74 107.33 T
+3 11 Q
+(setsockopt) 216.27 107.33 T
+2 10 Q
+(for) 284.58 107.33 T
+(T) 298.56 107.33 T
+(OS.) 304.49 107.33 T
+(By) 322.08 107.33 T
+(choosing) 336.07 107.33 T
+(an) 374.49 107.33 T
+(appropriate) 386.25 107.33 T
+(v) 434.1 107.33 T
+(alue,) 438.85 107.33 T
+(you) 460.32 107.33 T
+(can) 477.64 107.33 T
+(also) 493.83 107.33 T
+(set) 512.26 107.33 T
+(the) 525.68 107.33 T
+72 251/G933 FmPA
+(other bits not used by Dif) 72 95.33 T
+(fServ) 173.69 95.33 T
+(. In the future this may change as operating systems get updated.) 194.7 95.33 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.1/DEST FmPD2
+FMENDPAGE
+%%EndPage: "1" 2
+%%Page: "2" 3
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(2) 302.66 55 T
+2 F
+(When TCP protocols are used, there must be a one-to-one mapping between a traffic source) 96 712.22 T
+72 856/G126 FmPA
+(and) 72 688.22 T
+(a) 91.64 688.22 T
+(traffic) 99.29 688.22 T
+(sink) 130.92 688.22 T
+(for) 153.24 688.22 T
+(each) 169.54 688.22 T
+(connection.) 193.84 688.22 T
+(Each) 251.81 688.22 T
+(invocation) 278.11 688.22 T
+(of) 331.09 688.22 T
+(the) 343.4 688.22 T
+(TG) 360.38 688.22 T
+(program) 378.69 688.22 T
+(is) 421.66 688.22 T
+(able) 431.98 688.22 T
+(to) 454.29 688.22 T
+(sustain) 465.94 688.22 T
+(a) 501.59 688.22 T
+(single) 509.23 688.22 T
+(stream; the TG is currently unable to service more than one active connection at a time.) 72 664.22 T
+(Consequently, if two connections are desired between a pair of nodes, two traffic sinks) 72 640.22 T
+(are) 72 616.22 T
+(required.) 89.65 616.22 T
+0 14 Q
+(2) 251.65 558.88 T
+(USER GUIDE) 273.44 558.88 T
+72 703/G25 FmPA
+2 12 Q
+(This section describes how to use the TG program. We describe the function of the TG) 96 528.22 T
+72 672/G26 FmPA
+(program and the syntax of its command specification language.) 72 504.22 T
+(Note) 96 478.22 T
+(that) 121.47 478.22 T
+(keywords) 141.61 478.22 T
+(and) 190.4 478.22 T
+(names) 209.87 478.22 T
+(of) 242.67 478.22 T
+(programs) 254.81 478.22 T
+(are) 302.27 478.22 T
+(shown) 319.07 478.22 T
+(in) 352.54 478.22 T
+3 11 Q
+(typewriter) 364.02 478.22 T
+2 12 Q
+(font,) 432.15 478.22 T
+(while) 456.63 478.22 T
+(parameters) 485.43 478.22 T
+72 622/G127 FmPA
+(\050values) 72 454.22 T
+(that) 109.44 454.22 T
+(you) 130.22 454.22 T
+(supply\051) 151 454.22 T
+(are) 189.79 454.22 T
+(shown) 207.22 454.22 T
+(in) 241.34 454.22 T
+4 F
+(italic) 253.45 454.22 T
+2 F
+(font.) 280.91 454.22 T
+(Optional) 306.02 454.22 T
+(parameters) 350.81 454.22 T
+(are) 406.23 454.22 T
+(enclosed) 423.67 454.22 T
+(in) 468.44 454.22 T
+(brackets) 480.56 454.22 T
+([) 523.32 454.22 T
+(]:) 530.1 454.22 T
+(these parameters may be safely omitted. During our discussion of the syntax of TG specification) 72 430.22 T
+(and log files, angled brackets < > are used to delimit metavariables.) 72 406.22 T
+(In our discussion, all numeric parameters can be entered as decimal, octal, hexadecimal) 96 380.22 T
+72 524/G128 FmPA
+(integer,) 72 356.22 T
+(or) 111.17 356.22 T
+(floating-point) 124 356.22 T
+(numbers.) 192.85 356.22 T
+(In) 240.02 356.22 T
+(general,) 252.86 356.22 T
+(a) 294.02 356.22 T
+(number) 302.19 356.22 T
+(may) 341.69 356.22 T
+(be) 365.2 356.22 T
+(an) 379.36 356.22 T
+(integer) 393.54 356.22 T
+(\0501\051,) 429.7 356.22 T
+(a) 449.54 356.22 T
+(decimal) 457.71 356.22 T
+(\0501.0\051,) 498.54 356.22 T
+(or) 527.38 356.22 T
+(a) 72 332.22 T
+(floating-point) 80.28 332.22 T
+(number) 149.22 332.22 T
+(\0501E-3\051.) 188.83 332.22 T
+(Octal) 226.1 332.22 T
+(\050010\051) 255.04 332.22 T
+(and) 283.98 332.22 T
+(hexadecimal) 304.25 332.22 T
+(\0500x10\051) 367.85 332.22 T
+(numbers) 402.79 332.22 T
+(are) 447.06 332.22 T
+(also) 464.66 332.22 T
+(supported,) 486.94 332.22 T
+(although they are not too useful for our application.) 72 308.22 T
+(All) 96 282.22 T
+(time) 113.92 282.22 T
+(values) 137.84 282.22 T
+(supplied) 171.09 282.22 T
+(to) 214.34 282.22 T
+(the) 226.26 282.22 T
+(TG) 243.51 282.22 T
+(program) 262.09 282.22 T
+(are) 305.33 282.22 T
+(expressed) 322.57 282.22 T
+(as) 372.47 282.22 T
+(hours:minutes:seconds) 385.05 282.22 T
+(\050H:M:S\051) 496.96 282.22 T
+72 426/G160 FmPA
+(separated) 72 258.22 T
+(only) 120.31 258.22 T
+(by) 144.64 258.22 T
+(colons) 159.64 258.22 T
+(and) 193.96 258.22 T
+(without) 214.29 258.22 T
+(intervening) 253.96 258.22 T
+(white) 311.61 258.22 T
+(spaces.) 341.27 258.22 T
+(These) 378.59 258.22 T
+(time) 410.24 258.22 T
+(fields) 434.57 258.22 T
+(are) 464.23 258.22 T
+(not) 481.88 258.22 T
+(limited,) 500.21 258.22 T
+(so you can, if you desire, work only in seconds or minutes.) 72 234.22 T
+(If the H:M:S time format is not followed, the fundamental unit of measure for time defaults) 96 208.22 T
+72 352/G189 FmPA
+(to) 72 184.22 T
+(units) 83.83 184.22 T
+(of) 109.68 184.22 T
+(\322seconds,\323) 122.17 184.22 T
+(or) 176.32 184.22 T
+(fractions) 188.81 184.22 T
+(thereof.) 233.3 184.22 T
+(Note) 272.78 184.22 T
+(that) 298.61 184.22 T
+(the) 319.11 184.22 T
+(unit) 336.27 184.22 T
+(of) 357.45 184.22 T
+(measure) 369.94 184.22 T
+(for) 412.42 184.22 T
+(the) 428.91 184.22 T
+(packet) 446.08 184.22 T
+(size) 479.9 184.22 T
+(random) 501.06 184.22 T
+(variables is bytes.) 72 160.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.2/DEST FmPD2
+FMENDPAGE
+%%EndPage: "2" 3
+%%Page: "3" 4
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(3) 302.66 55 T
+2 F
+(Internally, the TG deals with most parameters as double precision floating-point values, so) 96 712.22 T
+72 856/G190 FmPA
+(that) 72 688.22 T
+(even) 92.48 688.22 T
+(very) 117.62 688.22 T
+(small) 141.42 688.22 T
+(values) 169.9 688.22 T
+(are) 203.04 688.22 T
+(represented) 220.18 688.22 T
+(correctly.) 277.97 688.22 T
+(The) 326.09 688.22 T
+(precision) 347.23 688.22 T
+(of) 393.71 688.22 T
+(a) 406.18 688.22 T
+(number) 413.99 688.22 T
+(will) 453.13 688.22 T
+(be) 474.28 688.22 T
+(preserved,) 488.09 688.22 T
+(in spite of the potential inability of a system to generate packets at the specified resolution.) 72 664.22 T
+0 F
+(2.1) 72 628.22 T
+(SOFTWARE DISTRIBUTION HIERARCHY) 100.68 628.22 T
+72 772/G27 FmPA
+2 F
+(The software distribution hierarchy consists of several top-level directories, which follow) 96 610.22 T
+72 754/G28 FmPA
+(common UNIX conventions. Three programs form the TG distribution: the first is the traffic) 72 586.22 T
+(generator \050) 72 562.22 T
+3 11 Q
+(tg) 124.31 562.22 T
+2 12 Q
+(\051, the second is a filter \050) 137.51 562.22 T
+3 11 Q
+(dcat) 251.15 562.22 T
+2 12 Q
+(\051 for reading TG log files, and the third is a perl script) 277.55 562.22 T
+(\050) 72 538.22 T
+3 11 Q
+(gengraph.pl) 76 538.22 T
+2 12 Q
+(\051 that generates information used by graphing tools \050) 148.6 538.22 T
+3 11 Q
+(Xplot) 400.56 538.22 T
+2 12 Q
+(,) 433.56 538.22 T
+3 11 Q
+(Gnuplot) 439.56 538.22 T
+2 12 Q
+(, and) 485.76 538.22 T
+3 11 Q
+(Xgraph) 72 514.22 T
+2 12 Q
+( are the currently supported graphing tools\051.) 111.6 514.22 T
+(The directories and their contents are as follows.) 96 488.22 T
+72 632/G647 FmPA
+(\245) 96 462.22 T
+3 11 Q
+(./bin) 114 462.22 T
+2 12 Q
+(\321Executable versions of Solaris*, SunOS\240, FreeBSD and Linux\340binaries,) 147 462.22 T
+72 606/G651 FmPA
+(and the perl script for graphing TG data) 114 438.22 T
+(\245) 96 412.22 T
+3 11 Q
+(./docs) 114 412.22 T
+2 12 Q
+(\321Documents and other notes) 153.6 412.22 T
+72 556/G652 FmPA
+(\245) 96 386.22 T
+3 11 Q
+(./examples) 114 386.22 T
+2 12 Q
+(\321Sample TG specification files**) 180 386.22 T
+72 530/G31 FmPA
+(\245) 96 360.22 T
+3 11 Q
+(./src) 114 360.22 T
+2 12 Q
+(\321Source code for the TG distribution.) 147 360.22 T
+72 504/G191 FmPA
+0 F
+(2.2) 72 324.22 T
+(BUILDING THE TG PROGRAM) 100.68 324.22 T
+72 468/G33 FmPA
+2 F
+(The TG is released with source code so that enhancements can be added to support new) 96 306.22 T
+72 450/G34 FmPA
+(protocols) 72 282.22 T
+(or) 118.92 282.22 T
+(additional) 131.16 282.22 T
+(statistical) 181.41 282.22 T
+(distributions) 229 282.22 T
+(that) 291.27 282.22 T
+(may) 311.52 282.22 T
+(be) 334.43 282.22 T
+(needed) 348.01 282.22 T
+(for) 384.25 282.22 T
+(future) 400.49 282.22 T
+(experimentation.) 431.4 282.22 T
+(Note) 514.64 282.22 T
+(that the TG distribution includes compiled binaries in the) 72 258.22 T
+3 11 Q
+(./bin) 349.66 258.22 T
+2 12 Q
+( directory.) 382.66 258.22 T
+72 138 540.22 153 C
+0 0 0 1 0 0 0 1 K
+71 145 215 145 2 L
+0.5 H
+2 Z
+0 X
+N
+0 0 612 792 C
+0 0 0 1 0 0 0 1 K
+2 10 Q
+0 X
+(*Solaris is a trademark of Sun Microsystems, Inc.) 72 131.33 T
+72 275/G650 FmPA
+(\240SunOS is a trademark of Sun Microsystems, Inc.) 72 119.33 T
+72 263/G915 FmPA
+(\340Linux RedHat distrib) 72 107.33 T
+(ution 7.1 and 7.2 ha) 161.8 107.33 T
+(v) 241.04 107.33 T
+(e been tested.) 245.89 107.33 T
+72 251/G950 FmPA
+(**TG speci\336cation \336les are also referred to as scripts.) 72 95.33 T
+72 239/G161 FmPA
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.3/DEST FmPD2
+FMENDPAGE
+%%EndPage: "3" 4
+%%Page: "4" 5
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(4) 302.66 55 T
+2 F
+(To rebuild the traffic generator, change to the) 96 712.22 T
+3 11 Q
+(./src) 317.6 712.22 T
+2 12 Q
+( directory and execute the) 350.6 712.22 T
+3 11 Q
+(make) 477.56 712.22 T
+72 856/G32 FmPA
+2 12 Q
+(command.) 72 688.22 T
+(Your) 125.29 688.22 T
+(system) 152.91 688.22 T
+(will) 189.21 688.22 T
+(also) 210.85 688.22 T
+(need) 233.14 688.22 T
+(the) 258.76 688.22 T
+3 11 Q
+(lex) 276.39 688.22 T
+2 12 Q
+(and) 302.7 688.22 T
+3 11 Q
+(yacc) 326.55 688.22 T
+2 12 Q
+(programs) 359.47 688.22 T
+(to) 407.75 688.22 T
+(rebuild) 420.05 688.22 T
+(the) 457.01 688.22 T
+(TG) 474.64 688.22 T
+(program.) 493.6 688.22 T
+(If) 72 664.22 T
+(FreeBSD) 82.68 664.22 T
+(is) 130.02 664.22 T
+(used,) 140.71 664.22 T
+(flex) 168.39 664.22 T
+(can) 189.73 664.22 T
+(be) 209.07 664.22 T
+(used) 223.08 664.22 T
+(in) 247.76 664.22 T
+(place) 259.77 664.22 T
+(of) 287.78 664.22 T
+(lex.) 300.46 664.22 T
+(Note) 320.8 664.22 T
+(that) 346.81 664.22 T
+(the) 367.5 664.22 T
+(software) 384.84 664.22 T
+(has) 428.84 664.22 T
+(been) 447.52 664.22 T
+(compiled) 472.86 664.22 T
+(and) 520.21 664.22 T
+(tested) 72 640.22 T
+(only) 102.73 640.22 T
+(on) 126.8 640.22 T
+(the) 141.53 640.22 T
+(SunOS,) 158.93 640.22 T
+(Solaris,) 198.67 640.22 T
+(FreeBSD,) 237.74 640.22 T
+(and) 288.13 640.22 T
+(Linux) 308.19 640.22 T
+(operating) 339.59 640.22 T
+(systems;) 387.65 640.22 T
+(however,) 431.72 640.22 T
+(the) 478.77 640.22 T
+(software) 496.17 640.22 T
+(should work on other UNIX-based operating systems.) 72 616.22 T
+0 F
+(2.3) 72 580.22 T
+(INVOKING THE TG) 100.68 580.22 T
+72 724/G35 FmPA
+2 F
+(The syntax for invoking the TG program is:) 96 562.22 T
+72 706/G36 FmPA
+3 11 Q
+(tg [-f] [ -i) 96 534.22 T
+4 12 Q
+(input-file) 181.8 534.22 T
+3 11 Q
+( ] [ -o) 225.8 534.22 T
+4 12 Q
+(output-file) 278.6 534.22 T
+3 11 Q
+( ]) 328.61 534.22 T
+72 678/G37 FmPA
+2 12 Q
+(By) 72 516.22 T
+(default,) 88.87 516.22 T
+(the) 128.05 516.22 T
+(TG) 145.58 516.22 T
+(program) 164.43 516.22 T
+(reads) 207.95 516.22 T
+(the) 236.13 516.22 T
+(standard) 253.66 516.22 T
+(input) 297.18 516.22 T
+(\050stdin\051) 324.71 516.22 T
+(device) 358.9 516.22 T
+(for) 393.09 516.22 T
+(a) 409.94 516.22 T
+(TG) 418.13 516.22 T
+(specification) 436.99 516.22 T
+(file) 501.17 516.22 T
+(and) 520.03 516.22 T
+72 660/G38 FmPA
+(writes its log file to the standard output device \050stdout\051. The traffic generator accepts the) 72 492.22 T
+3 11 Q
+(-i) 499.25 492.22 T
+2 12 Q
+( and) 512.45 492.22 T
+3 11 Q
+(-) 72 468.22 T
+(o) 78.6 468.22 T
+2 12 Q
+(options,) 90.52 468.22 T
+(which) 131.28 468.22 T
+(override) 163.03 468.22 T
+(the) 205.43 468.22 T
+(default) 222.51 468.22 T
+(input/output) 258.26 468.22 T
+(behavior.) 319.36 468.22 T
+(The) 366.77 468.22 T
+3 11 Q
+(-i) 387.84 468.22 T
+2 12 Q
+(option) 403.46 468.22 T
+(specifies) 436.55 468.22 T
+(an) 480.96 468.22 T
+(input) 494.71 468.22 T
+(file) 521.8 468.22 T
+(that) 72 444.22 T
+(contains) 92.94 444.22 T
+(TG) 135.87 444.22 T
+(test) 154.81 444.22 T
+(specification) 174.41 444.22 T
+(entries.) 238.67 444.22 T
+(The) 276.6 444.22 T
+(destination) 298.2 444.22 T
+(of) 353.81 444.22 T
+(the) 366.74 444.22 T
+(log) 384.35 444.22 T
+(file) 402.62 444.22 T
+(can) 421.55 444.22 T
+(be) 441.15 444.22 T
+(changed) 455.42 444.22 T
+(with) 498.34 444.22 T
+(the) 522.61 444.22 T
+3 11 Q
+(-o) 72 420.22 T
+2 12 Q
+(option. The) 91.8 420.22 T
+3 11 Q
+(-f) 150.13 420.22 T
+2 12 Q
+( option specifies that the buffer be flushed to the log file after every write.) 163.33 420.22 T
+(Alternatively, specification and log files may be stored on disk by using the I/O redirection) 96 394.22 T
+72 538/G214 FmPA
+(features) 72 370.22 T
+(present) 112.76 370.22 T
+(in) 150.2 370.22 T
+(many) 162.32 370.22 T
+(command) 191.76 370.22 T
+(interpreter) 241.88 370.22 T
+(shells.) 294.64 370.22 T
+(For) 327.76 370.22 T
+(example,) 347.21 370.22 T
+(the) 393.64 370.22 T
+(following) 411.09 370.22 T
+(command) 460.54 370.22 T
+(in) 510.65 370.22 T
+(the) 522.77 370.22 T
+(UNIX) 72 346.22 T
+3 11 Q
+(csh) 104.5 346.22 T
+2 12 Q
+(redirects) 126.81 346.22 T
+(the) 170.64 346.22 T
+(contents) 187.81 346.22 T
+(of) 230.32 346.22 T
+4 F
+(input-file) 242.83 346.22 T
+2 F
+(into) 289.34 346.22 T
+(the) 310.52 346.22 T
+(traffic) 327.7 346.22 T
+(generator) 359.53 346.22 T
+(program,) 407.35 346.22 T
+(and) 453.52 346.22 T
+(writes) 473.36 346.22 T
+(the) 505.19 346.22 T
+(log) 522.37 346.22 T
+(file to) 72 322.22 T
+4 F
+(output-file) 103.33 322.22 T
+2 F
+(.) 153.34 322.22 T
+3 11 Q
+(tg <) 96 294.22 T
+4 12 Q
+(input-file) 129 294.22 T
+3 11 Q
+( >) 173 294.22 T
+4 12 Q
+(output-file) 192.8 294.22 T
+72 438/G39 FmPA
+0 F
+(2.4) 72 268.22 T
+(TG SPECIFICATION FILE) 100.68 268.22 T
+72 412/G40 FmPA
+2 F
+(A specification file consists of commands in the following forms, and in the order specified:) 96 250.22 T
+72 394/G41 FmPA
+3 11 Q
+(< start-time >) 96 222.88 T
+72 367/G42 FmPA
+(<) 96 209.88 T
+5 F
+(association-spec) 109.2 209.88 T
+3 F
+( >) 214.8 209.88 T
+(< tg-action-list >) 96 196.88 T
+2 12 Q
+(The) 96 179.22 T
+4 F
+(start-time) 117.29 179.22 T
+2 F
+(clause) 166.58 179.22 T
+(indicates) 199.19 179.22 T
+(the) 244.48 179.22 T
+(time) 261.77 179.22 T
+(that) 285.73 179.22 T
+(a) 306.35 179.22 T
+(test) 314.31 179.22 T
+(run) 333.6 179.22 T
+(is) 352.22 179.22 T
+(supposed) 362.85 179.22 T
+(to) 410.14 179.22 T
+(start,) 422.1 179.22 T
+(relative) 448.39 179.22 T
+(to) 487 179.22 T
+(the) 498.96 179.22 T
+(time) 516.25 179.22 T
+72 323/G43 FmPA
+(the) 72 155.22 T
+(clause) 88.99 155.22 T
+(is) 121.31 155.22 T
+(parsed.) 131.64 155.22 T
+(Upon) 168.29 155.22 T
+(satisfying) 197.28 155.22 T
+(the) 246.28 155.22 T
+4 F
+(start-time) 263.27 155.22 T
+2 F
+(clause,) 312.27 155.22 T
+(the) 347.59 155.22 T
+(actions) 364.58 155.22 T
+(listed) 400.9 155.22 T
+(in) 429.24 155.22 T
+(the) 440.9 155.22 T
+4 F
+(association-spec) 457.89 155.22 T
+2 F
+(and) 72 131.22 T
+4 F
+(tg-action-list) 92.33 131.22 T
+2 F
+( clauses are executed. Before test traffic can be generated, an) 154.33 131.22 T
+4 F
+(association-spec) 449.88 131.22 T
+2 F
+(entry) 72 107.22 T
+(must) 99.42 107.22 T
+(be) 125.53 107.22 T
+(provided) 139.62 107.22 T
+(to) 185.04 107.22 T
+(specify) 197.15 107.22 T
+(an) 234.57 107.22 T
+(association,) 248.66 107.22 T
+(or) 307.75 107.22 T
+(binding,) 320.51 107.22 T
+(between) 362.95 107.22 T
+(a) 405.7 107.22 T
+(traffic) 413.79 107.22 T
+(source) 445.87 107.22 T
+(and) 479.95 107.22 T
+(a) 500.04 107.22 T
+(traffic) 508.14 107.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.4/DEST FmPD2
+FMENDPAGE
+%%EndPage: "4" 5
+%%Page: "5" 6
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(5) 302.66 55 T
+2 F
+(sink.) 72 712.22 T
+(The) 97.47 712.22 T
+4 F
+(association-spec) 118.59 712.22 T
+2 F
+(also) 201.04 712.22 T
+(provides) 222.84 712.22 T
+(the) 266.63 712.22 T
+(ancillary) 283.76 712.22 T
+(test) 328.21 712.22 T
+(parameters) 347.34 712.22 T
+(used) 402.45 712.22 T
+(in) 426.91 712.22 T
+(a) 438.71 712.22 T
+(test) 446.5 712.22 T
+(session.) 465.63 712.22 T
+(The) 505.76 712.22 T
+4 F
+(tg-) 526.88 712.22 T
+(action-list) 72 688.22 T
+2 F
+( is a list of) 120.67 688.22 T
+4 F
+(tg-action) 173.68 688.22 T
+2 F
+( clauses; each clause specifies an action to be performed, such as) 217.01 688.22 T
+(causing the TG program to generate test traffic with specified distributions.) 72 664.22 T
+(A file inclusion capability is supported. A line of the form) 96 638.22 T
+72 782/G44 FmPA
+3 11 Q
+(include) 96 610.22 T
+4 12 Q
+(\322filename\323) 148.8 610.22 T
+72 754/G45 FmPA
+2 F
+(causes the named file to be read and parsed. Double quotes must enclose the filename. The) 72 592.22 T
+72 736/G131 FmPA
+(maximum depth of inclusion is precompiled into the program and can be changed by redefining) 72 568.22 T
+3 11 Q
+(MAX_INCLUDE_LEVEL) 72 544.22 T
+2 12 Q
+(.) 184.2 544.22 T
+(A specification file, therefore, contains a complete set of commands\321) 193.8 544.22 T
+(i.e.,) 72 520.22 T
+4 F
+(start-time) 92.66 520.22 T
+2 F
+(,) 139.33 520.22 T
+4 F
+(association-spec,) 145.33 520.22 T
+2 F
+(and) 231.32 520.22 T
+4 F
+( tg-action-list) 248.65 520.22 T
+2 F
+(\321or an include file followed by zero or more) 313.66 520.22 T
+4 F
+(tg-action) 72 496.22 T
+2 F
+( clauses.) 115.33 496.22 T
+0 F
+(2.4.1) 72 460.22 T
+(Starting Time) 110.69 460.22 T
+72 604/G46 FmPA
+2 F
+(The experiment starting time is specified relative to the current time as an offset value. The) 96 442.22 T
+72 586/G47 FmPA
+(offset value is in modulus-time form, where the supplied parameter specifies the next time) 72 418.22 T
+(boundary that an action will take place. The syntax for the start time is) 72 394.22 T
+3 11 Q
+(on) 96 366.22 T
+4 12 Q
+(H:M:S) 115.8 366.22 T
+72 510/G48 FmPA
+2 F
+(During an invocation of the TG, the) 72 348.22 T
+3 11 Q
+(on) 247.31 348.22 T
+2 12 Q
+( clause can appear at most once in a specification file.) 260.51 348.22 T
+72 492/G49 FmPA
+(This scheme is relatively independent of local time. The advantage of the scheme is scripts) 96 322.22 T
+72 466/G216 FmPA
+(can be rerun without modification. It also allows scripts to synchronize to within a few) 72 298.22 T
+(milliseconds of each other, despite having been started several seconds out of synchronization) 72 274.22 T
+(\050e.g., due to network delay to geographically remote hosts, or \322telephone slew\323 between human) 72 250.22 T
+(operators\051. The quality of the synchronization is limited only by the ability of the time protocol) 72 226.22 T
+(\050e.g., Network Time Protocol\051 to synchronize time, and by operating-system factors such as) 72 202.22 T
+(scheduling granularity and delays.) 72 178.22 T
+(For example:) 96 152.22 T
+72 296/G217 FmPA
+3 11 Q
+(on 15) 96 124.88 T
+72 269/G50 FmPA
+72 252/G660 FmPA
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.5/DEST FmPD2
+FMENDPAGE
+%%EndPage: "5" 6
+%%Page: "6" 7
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(6) 302.66 55 T
+2 F
+(starts at the next fifteen-second interval \050) 72 712.22 T
+6 11 Q
+(x:00, x:15, x:30, or x:45) 268.62 712.22 T
+2 12 Q
+(\051, while) 433.62 712.22 T
+72 856/G51 FmPA
+3 11 Q
+(on 1:00) 96 684.88 T
+72 829/G52 FmPA
+72 812/G661 FmPA
+2 12 Q
+(starts at the beginning of the next minute.) 72 650.22 T
+72 794/G53 FmPA
+(For the very patient:) 96 624.22 T
+72 768/G218 FmPA
+3 11 Q
+(on 1:00:00) 96 596.88 T
+72 741/G54 FmPA
+72 724/G662 FmPA
+2 12 Q
+(starts at the beginning of the next hour.) 72 562.22 T
+72 706/G55 FmPA
+(After) 96 536.22 T
+(the) 123.8 536.22 T
+3 11 Q
+(on) 140.95 536.22 T
+2 12 Q
+(clause) 156.63 536.22 T
+(has) 189.1 536.22 T
+(been) 207.57 536.22 T
+(satisfied,) 232.71 536.22 T
+(the) 278.19 536.22 T
+4 F
+(association-spec) 295.33 536.22 T
+2 F
+(and) 377.81 536.22 T
+4 F
+(tg-action-list) 397.62 536.22 T
+2 F
+(in) 462.1 536.22 T
+(the) 473.92 536.22 T
+(following) 491.07 536.22 T
+72 680/G219 FmPA
+(lines are executed. Note that the) 72 512.22 T
+3 11 Q
+(on) 228.96 512.22 T
+2 12 Q
+( clause is designed to provide session-level synchronization) 242.16 512.22 T
+(between) 72 488.22 T
+(the) 114.47 488.22 T
+(TG) 131.63 488.22 T
+(processes,) 150.12 488.22 T
+(and) 201.59 488.22 T
+(does) 221.41 488.22 T
+(not) 245.9 488.22 T
+(cause) 263.73 488.22 T
+(traffic) 292.87 488.22 T
+(to) 324.67 488.22 T
+(be) 336.5 488.22 T
+(generated.) 350.32 488.22 T
+(Traffic) 402.46 488.22 T
+(is) 438.26 488.22 T
+(not) 448.75 488.22 T
+(generated) 466.58 488.22 T
+(until) 515.72 488.22 T
+(a) 72 464.22 T
+4 F
+(tg-action) 80.33 464.22 T
+2 F
+( clause has been parsed, as discussed in Subsection 2.4.3.) 123.66 464.22 T
+0 F
+(2.4.2) 72 428.22 T
+(Association Specification) 110.69 428.22 T
+72 572/G56 FmPA
+2 F
+(An) 96 410.22 T
+4 F
+(association-spec) 113.66 410.22 T
+2 F
+( is a binding between a traffic source and a traffic sink. An) 193.66 410.22 T
+4 F
+(association-) 478.25 410.22 T
+72 554/G57 FmPA
+(spec) 72 386.22 T
+2 F
+( may take one of the following two forms:) 93.32 386.22 T
+4 F
+(protocol local-address) 96 358.22 T
+3 11 Q
+( server [) 205 358.22 T
+4 12 Q
+(quality-of-service) 271 358.22 T
+3 11 Q
+( ]) 355.64 358.22 T
+72 502/G58 FmPA
+2 12 Q
+(or) 72 340.22 T
+72 484/G59 FmPA
+4 F
+(protocol remote-address) 96 312.22 T
+3 11 Q
+( [) 214.32 312.22 T
+4 12 Q
+(quality-of-service) 234.12 312.22 T
+3 11 Q
+( ]) 318.77 312.22 T
+72 456/G60 FmPA
+7 12 Q
+(Traffic) 96 294.22 T
+(Source/Sink) 134.65 294.22 T
+(Modes) 199.34 294.22 T
+2 F
+(.) 233.33 294.22 T
+(The) 239 294.22 T
+(TG) 260.33 294.22 T
+(program) 278.99 294.22 T
+(can) 322.31 294.22 T
+(serve) 341.63 294.22 T
+(both) 369.62 294.22 T
+(as) 393.62 294.22 T
+(a) 406.28 294.22 T
+(traffic) 414.28 294.22 T
+(source) 446.26 294.22 T
+(and) 480.24 294.22 T
+(a) 500.24 294.22 T
+(traffic) 508.23 294.22 T
+72 438/G61 FmPA
+(sink.) 72 270.22 T
+(The) 97.65 270.22 T
+(word) 118.96 270.22 T
+3 11 Q
+(server) 146.27 270.22 T
+2 12 Q
+(in) 188.51 270.22 T
+(the) 200.5 270.22 T
+(first) 217.81 270.22 T
+(form) 239.79 270.22 T
+(of) 265.77 270.22 T
+(the) 278.41 270.22 T
+4 F
+(association-spec) 295.72 270.22 T
+2 F
+(clause) 378.36 270.22 T
+(is) 411 270.22 T
+(a) 421.65 270.22 T
+(keyword) 429.62 270.22 T
+(that) 474.26 270.22 T
+(indicates) 494.91 270.22 T
+(that the traffic generator should act as a traffic sink. Once in the) 72 246.22 T
+3 11 Q
+(server) 381.25 246.22 T
+2 12 Q
+( mode, the TG program) 420.85 246.22 T
+(will) 72 222.22 T
+(wait) 93.54 222.22 T
+(indefinitely) 117.06 222.22 T
+(for) 175.26 222.22 T
+(incoming) 192.12 222.22 T
+(connections) 240.32 222.22 T
+(or) 300.5 222.22 T
+(traffic) 313.36 222.22 T
+(and) 345.54 222.22 T
+(will) 365.74 222.22 T
+(act) 387.27 222.22 T
+(upon) 404.13 222.22 T
+(the) 430.99 222.22 T
+(received) 448.52 222.22 T
+(messages) 492.03 222.22 T
+(as appropriate.) 72 198.22 T
+(When) 96 172.22 T
+(the) 127.44 172.22 T
+3 11 Q
+(server) 144.9 172.22 T
+2 12 Q
+(keyword) 187.29 172.22 T
+(is) 232.06 172.22 T
+(used,) 242.85 172.22 T
+(the) 270.64 172.22 T
+4 F
+(local-address) 288.09 172.22 T
+2 F
+(field) 356.21 172.22 T
+(specifies) 380.99 172.22 T
+(the) 425.77 172.22 T
+(local) 443.22 172.22 T
+(address) 469.33 172.22 T
+(where) 508.11 172.22 T
+72 316/G2152 FmPA
+(TG will accept traffic. The address must be for the local host, as the TG binds to the named port.) 72 148.22 T
+(Note that the IP address may be specified as) 72 124.22 T
+6 11 Q
+(0.0.0.0.) 286.96 124.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.6/DEST FmPD2
+[/Rect[331 460 413 473]/Border[0 0 0]/Page 9/View[/XYZ null 113 621 FmDC exch pop null]/LNK FmPD
+FMENDPAGE
+%%EndPage: "6" 7
+%%Page: "7" 8
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(7) 302.66 55 T
+7 F
+(Protocols) 96 712.22 T
+2 F
+(. The) 143.99 712.22 T
+4 F
+(protocol) 171.65 712.22 T
+2 F
+( argument is a string \050such as) 212.32 712.22 T
+3 11 Q
+(tcp) 355.3 712.22 T
+6 F
+(or) 381.7 712.22 T
+3 F
+( udp) 394.9 712.22 T
+2 12 Q
+(\051 that selects the) 421.3 712.22 T
+72 856/G162 FmPA
+(appropriate transport-layer protocol to carry the test traffic. The current implementation supports) 72 688.22 T
+(only TCP and UDP protocols; however, the internal protocol table may easily be expanded to) 72 664.22 T
+(accommodate new protocols as they are developed.) 72 640.22 T
+7 F
+(Addressing) 96 614.22 T
+2 F
+(.) 154.01 614.22 T
+(The) 159.59 614.22 T
+(current) 180.84 614.22 T
+(implementation) 217.4 614.22 T
+(does) 295.32 614.22 T
+(not) 319.9 614.22 T
+(resolve) 337.82 614.22 T
+(host) 375.06 614.22 T
+(names.) 397.65 614.22 T
+(All) 433.89 614.22 T
+(addresses) 451.81 614.22 T
+(must) 500.38 614.22 T
+(be) 526.3 614.22 T
+72 758/G163 FmPA
+(supplied) 72 590.22 T
+(in) 115.5 590.22 T
+(the) 127.66 590.22 T
+(standard) 145.16 590.22 T
+(Internet) 188.64 590.22 T
+(dotted) 228.79 590.22 T
+(address) 261.62 590.22 T
+(form) 300.44 590.22 T
+(\050e.g.,) 326.6 590.22 T
+(128.18.4.100.1234\051.) 353.75 590.22 T
+(Note) 453.57 590.22 T
+(that) 479.73 590.22 T
+(the) 500.56 590.22 T
+(port) 518.05 590.22 T
+(number is appended to the address. For example, the address) 72 566.22 T
+6 11 Q
+(128.18.4.100.1234) 366.61 566.22 T
+2 12 Q
+( specifies a) 478.81 566.22 T
+(rendezvous point of port) 72 542.22 T
+6 11 Q
+(1234) 192.65 542.22 T
+2 12 Q
+(at the host with the address) 225.65 542.22 T
+6 11 Q
+(128.18.4.100.) 358.97 542.22 T
+2 12 Q
+(Traffic) 96 516.22 T
+(streams) 132 516.22 T
+(are) 171.35 516.22 T
+(multiplexed) 188.7 516.22 T
+(by) 248.72 516.22 T
+(protocol) 263.42 516.22 T
+(port) 306.1 516.22 T
+(addresses.) 328.12 516.22 T
+(In) 379.8 516.22 T
+(many) 392.49 516.22 T
+(UNIX) 421.84 516.22 T
+(implementations,) 454.52 516.22 T
+72 660/G222 FmPA
+(port) 72 492.22 T
+(numbers) 93.94 492.22 T
+(less) 137.87 492.22 T
+(than) 158.48 492.22 T
+(1024) 181.75 492.22 T
+(are) 208.36 492.22 T
+(privileged) 225.62 492.22 T
+(and) 276.88 492.22 T
+(can) 296.82 492.22 T
+(only) 316.08 492.22 T
+(be) 340.02 492.22 T
+(accessed) 353.96 492.22 T
+(by) 398.54 492.22 T
+(programs) 413.15 492.22 T
+(with) 461.08 492.22 T
+(root) 485.02 492.22 T
+(access) 506.96 492.22 T
+(privileges. It is recommended that port numbers between 1024 and 2) 72 468.22 T
+2 8 Q
+(16) 401.62 473.22 T
+2 12 Q
+( - 1 be used. If a port is) 409.62 468.22 T
+(already being used, select a different port number and reexecute the program.) 72 444.22 T
+(The) 96 418.22 T
+4 F
+(remote-address) 117.66 418.22 T
+2 F
+( field selects the destination endpoint of the association; e.g., the) 192.31 418.22 T
+72 562/G223 FmPA
+(destination of a datagram or a peer in a connection. The address can be an IP multicast address.) 72 394.22 T
+(Note that addresses used in the association specification include the port number. The example) 72 370.22 T
+(below sets up the TG program so that subsequent UDP transmissions are sent to the process) 72 346.22 T
+(running on) 72 322.22 T
+6 11 Q
+(128.18.4.29) 127.33 322.22 T
+2 12 Q
+( and listening at port) 199.93 322.22 T
+6 11 Q
+(2345.) 301.6 322.22 T
+3 F
+(udp 128.18.4.29.2345) 96 294.88 T
+72 439/G62 FmPA
+7 12 Q
+(Quality) 96 277.22 T
+(of) 136.93 277.22 T
+(Service) 149.17 277.22 T
+2 F
+(.) 186.49 277.22 T
+(The) 191.74 277.22 T
+3 11 Q
+(quality-of-service) 212.65 277.22 T
+2 12 Q
+(\050QOS\051) 336.4 277.22 T
+(field) 370.65 277.22 T
+(includes) 394.89 277.22 T
+(the) 437.14 277.22 T
+(following) 454.05 277.22 T
+(entries,) 502.97 277.22 T
+72 421/G63 FmPA
+(specified in any order:) 72 253.22 T
+3 11 Q
+(average bandwidth) 96 225.22 T
+4 12 Q
+(number) 214.8 225.22 T
+72 369/G696 FmPA
+3 11 Q
+(peak bandwidth) 96 211.22 T
+4 12 Q
+(number) 195 211.22 T
+3 11 Q
+(average delay) 96 197.22 T
+4 12 Q
+(number) 188.4 197.22 T
+3 11 Q
+(peak delay) 96 183.22 T
+4 12 Q
+(number) 168.6 183.22 T
+3 11 Q
+(average loss) 96 169.22 T
+4 12 Q
+(number) 181.8 169.22 T
+3 11 Q
+(peak loss) 96 155.22 T
+4 12 Q
+(number) 162 155.22 T
+3 11 Q
+(interval) 96 141.22 T
+4 12 Q
+(number) 155.4 141.22 T
+3 11 Q
+(mtu) 96 127.22 T
+4 12 Q
+(number) 122.4 127.22 T
+3 11 Q
+(rcvwin) 96 113.22 T
+4 12 Q
+(number) 142.2 113.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.7/DEST FmPD2
+FMENDPAGE
+%%EndPage: "7" 8
+%%Page: "8" 9
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(8) 302.66 55 T
+3 11 Q
+(sndwin) 96 712.22 T
+4 12 Q
+(number) 142.2 712.22 T
+3 11 Q
+(tos) 96 698.22 T
+4 12 Q
+(number) 122.4 698.22 T
+3 11 Q
+(ttl) 96 684.22 T
+4 12 Q
+(number) 122.4 684.22 T
+72 811/G64 FmPA
+2 F
+(These) 96 649.22 T
+(options) 127.06 649.22 T
+(were) 164.81 649.22 T
+(designed) 190.53 649.22 T
+(to) 235.6 649.22 T
+(serve) 247.35 649.22 T
+(as) 275.07 649.22 T
+(subscription/connection) 287.48 649.22 T
+(setup) 404.54 649.22 T
+(profiles.) 432.28 649.22 T
+(In) 474.35 649.22 T
+(the) 486.75 649.22 T
+(current) 503.82 649.22 T
+72 793/G65 FmPA
+(TCP and UDP protocol implementation, these QOS options may be omitted. Eventually, these) 72 625.22 T
+(options may be used or ignored as the protocol\325s connection setup function sees fit. Currently,) 72 601.22 T
+3 11 Q
+(rcvwin) 72 577.22 T
+2 12 Q
+( and) 111.6 577.22 T
+3 11 Q
+(sndwin) 134.93 577.22 T
+2 12 Q
+( control the number of bytes in the receive and send window of TCP and) 174.53 577.22 T
+(UDP.) 72 553.22 T
+3 11 Q
+(TTL) 101.84 553.22 T
+2 12 Q
+(controls) 127.89 553.22 T
+(the) 169.4 553.22 T
+(scoping) 186.91 553.22 T
+(of) 227.08 553.22 T
+(the) 239.92 553.22 T
+(multicast) 257.43 553.22 T
+(traffic.) 304.27 553.22 T
+3 11 Q
+(TOS) 339.43 553.22 T
+2 12 Q
+(sets) 365.48 553.22 T
+(the) 386.33 553.22 T
+(IP) 403.83 553.22 T
+(ToS) 417.34 553.22 T
+(field:) 440.19 553.22 T
+(now) 468.36 553.22 T
+(known) 491.87 553.22 T
+(as) 527.38 553.22 T
+(the Differentiated Services field plus bits 6 and 7. All other options are ignored, though the) 72 529.22 T
+(numbers are parsed and inserted in the protocol data structure.) 72 505.22 T
+0 F
+(2.4.3) 72 469.22 T
+(TG Action List) 110.69 469.22 T
+72 613/G66 FmPA
+2 F
+(Traffic) 96 451.22 T
+(is) 131.76 451.22 T
+(generated) 142.21 451.22 T
+(via) 191.3 451.22 T
+4 F
+(tg-action-list) 208.42 451.22 T
+2 F
+(clauses.) 272.87 451.22 T
+(The) 312.97 451.22 T
+4 F
+(tg-action-list) 334.08 451.22 T
+2 F
+(is) 398.53 451.22 T
+(a) 408.98 451.22 T
+(list) 416.76 451.22 T
+(of) 433.88 451.22 T
+4 F
+(tg-action) 446.33 451.22 T
+2 F
+(elements,) 492.11 451.22 T
+72 595/G67 FmPA
+(each of which consists of) 72 427.22 T
+3 11 Q
+([ at) 96 399.22 T
+4 12 Q
+(time-literal) 129 399.22 T
+3 11 Q
+( ]) 183 399.22 T
+4 12 Q
+(tg-action) 202.8 399.22 T
+72 543/G68 FmPA
+2 F
+(The optional) 72 381.22 T
+3 11 Q
+(at) 136 381.22 T
+2 12 Q
+( clause specifies a time relative to the start time that the associated) 149.2 381.22 T
+4 F
+(tg-action) 470.81 381.22 T
+2 F
+( will) 514.14 381.22 T
+72 525/G69 FmPA
+(execute.) 72 357.22 T
+(The) 114.21 357.22 T
+4 F
+(time-literal) 135.43 357.22 T
+2 F
+(is) 191.99 357.22 T
+(a) 202.55 357.22 T
+(time) 210.44 357.22 T
+(specified) 234.33 357.22 T
+(in) 280.21 357.22 T
+(the) 292.11 357.22 T
+(H:M:S) 309.33 357.22 T
+(colon) 344.57 357.22 T
+(format.) 373.79 357.22 T
+(If) 411.34 357.22 T
+(the) 421.89 357.22 T
+3 11 Q
+(at) 439.11 357.22 T
+2 12 Q
+(clause) 454.87 357.22 T
+(is) 487.42 357.22 T
+(omitted,) 497.98 357.22 T
+(the action will commence upon completion of the previous action.) 72 333.22 T
+(A) 96 307.22 T
+4 F
+(tg-action) 107.66 307.22 T
+2 F
+( consists of either) 151 307.22 T
+72 451/G225 FmPA
+3 11 Q
+(setup) 96 279.88 T
+72 424/G70 FmPA
+2 12 Q
+(by itself or) 72 262.22 T
+72 406/G71 FmPA
+3 11 Q
+(wait [) 96 234.22 T
+4 12 Q
+(time-literal) 142.2 234.22 T
+3 11 Q
+( ]) 196.2 234.22 T
+72 378/G72 FmPA
+2 12 Q
+(by itself or) 72 216.22 T
+72 360/G73 FmPA
+3 11 Q
+(log) 96 188.22 T
+4 12 Q
+(datetime-format) 122.4 188.22 T
+72 332/G1013 FmPA
+2 F
+(by itself or) 72 170.22 T
+72 314/G1012 FmPA
+3 11 Q
+(arrival) 96 142.22 T
+4 12 Q
+(distribution) 148.8 142.22 T
+3 11 Q
+( length) 204.82 142.22 T
+4 12 Q
+(distribution) 257.62 142.22 T
+72 286/G2142 FmPA
+2 F
+(in) 72 124.22 T
+(that) 83.79 124.22 T
+(order.) 104.25 124.22 T
+(These) 135.03 124.22 T
+(entries) 166.15 124.22 T
+(may) 200.6 124.22 T
+(be) 223.72 124.22 T
+(followed) 237.5 124.22 T
+(by) 282.62 124.22 T
+(a) 297.08 124.22 T
+(list) 304.87 124.22 T
+(of) 322 124.22 T
+(any) 334.45 124.22 T
+(or) 354.24 124.22 T
+(all) 366.7 124.22 T
+(of) 381.15 124.22 T
+(the) 393.61 124.22 T
+(following,) 410.73 124.22 T
+(specified) 462.86 124.22 T
+(in) 508.64 124.22 T
+(any) 520.43 124.22 T
+72 268/G2143 FmPA
+(order:) 72 100.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.8/DEST FmPD2
+113 621/M9.60688.3Level.243.TG.Action.List FmPA
+113 621/I1.12 FmPA
+FMENDPAGE
+%%EndPage: "8" 9
+%%Page: "9" 10
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(9) 302.66 55 T
+3 11 Q
+(data) 96 712.22 T
+4 12 Q
+(number) 129 712.22 T
+72 856/G76 FmPA
+3 11 Q
+(packet) 96 698.22 T
+4 12 Q
+(number) 142.2 698.22 T
+3 11 Q
+(time) 96 684.22 T
+4 12 Q
+( time-literal) 122.4 684.22 T
+3 11 Q
+(seed) 96 670.22 T
+4 12 Q
+(number) 129 670.22 T
+2 F
+(The) 96 652.22 T
+3 11 Q
+(setup) 117.66 652.22 T
+2 12 Q
+( clause forces an association setup to occur. If no) 150.66 652.22 T
+3 11 Q
+(setup) 388.93 652.22 T
+2 12 Q
+( clause is present, an) 421.93 652.22 T
+72 796/G77 FmPA
+(implicit) 72 628.22 T
+(setup) 112.05 628.22 T
+(will) 140.09 628.22 T
+(occur) 161.46 628.22 T
+(at) 190.82 628.22 T
+(the) 202.19 628.22 T
+(time) 219.56 628.22 T
+(specified) 243.6 628.22 T
+(by) 289.62 628.22 T
+(the) 304.33 628.22 T
+3 11 Q
+(on) 321.7 628.22 T
+2 12 Q
+(start-time) 337.6 628.22 T
+(clause.) 386.3 628.22 T
+(It) 422 628.22 T
+(is) 432.04 628.22 T
+(illegal) 442.74 628.22 T
+(to) 475.45 628.22 T
+(have) 487.49 628.22 T
+(more) 512.85 628.22 T
+(than) 72 604.22 T
+(one) 95 604.22 T
+(setup) 114.66 604.22 T
+(clause;) 142.32 604.22 T
+(if) 177.98 604.22 T
+(a) 187.64 604.22 T
+(setup) 195.3 604.22 T
+(clause) 222.96 604.22 T
+(is) 255.28 604.22 T
+(present,) 265.62 604.22 T
+(it) 305.61 604.22 T
+(must) 314.61 604.22 T
+(precede) 340.28 604.22 T
+(all) 379.92 604.22 T
+4 F
+(tg-action) 394.26 604.22 T
+2 F
+(clauses) 439.92 604.22 T
+(that) 476.91 604.22 T
+(generate) 497.24 604.22 T
+(traffic.) 72 580.22 T
+(The) 96 554.22 T
+3 11 Q
+(wait) 117.66 554.22 T
+2 12 Q
+( clause causes the traffic generator to pause, as specified by the time-literal) 144.06 554.22 T
+72 698/G226 FmPA
+(argument,) 72 530.22 T
+(or) 123.29 530.22 T
+(by) 136.26 530.22 T
+(the) 151.22 530.22 T
+(succeeding) 168.85 530.22 T
+3 11 Q
+(at) 225.14 530.22 T
+2 12 Q
+(clause) 241.3 530.22 T
+(\050or) 274.26 530.22 T
+(forever,) 291.22 530.22 T
+(if) 331.83 530.22 T
+(there) 342.13 530.22 T
+(is) 369.09 530.22 T
+(no) 380.06 530.22 T
+(time-literal) 395.03 530.22 T
+(argument) 451.32 530.22 T
+(and) 499.61 530.22 T
+(this) 519.91 530.22 T
+(is) 72 506.22 T
+(the) 82.92 506.22 T
+(last) 100.5 506.22 T
+4 F
+(tg-action) 120.08 506.22 T
+2 F
+(;) 163.42 506.22 T
+(this) 169.67 506.22 T
+(is) 189.92 506.22 T
+(useful) 200.84 506.22 T
+(for) 233.09 506.22 T
+(servers\051.) 250 506.22 T
+(The) 293.89 506.22 T
+3 11 Q
+(log) 315.47 506.22 T
+2 12 Q
+(clause) 338.18 506.22 T
+(opens) 371.09 506.22 T
+(a) 402 506.22 T
+(new) 410.24 506.22 T
+(log) 433.15 506.22 T
+(file.) 451.4 506.22 T
+(The) 473.32 506.22 T
+4 F
+(datetime-) 494.89 506.22 T
+(format) 72 482.22 T
+2 F
+(is) 106.37 482.22 T
+(the) 116.74 482.22 T
+(desired) 133.76 482.22 T
+(strftime) 170.78 482.22 T
+(format) 210.48 482.22 T
+(specification*) 244.83 482.22 T
+(\050for) 314.52 482.22 T
+(example,) 334.87 482.22 T
+3 11 Q
+(log) 383.72 482.22 T
+(\322%D\323) 408.72 482.22 T
+2 12 Q
+(\051.) 435.12 482.22 T
+(The) 444.48 482.22 T
+(new) 465.51 482.22 T
+(filename) 487.86 482.22 T
+(is) 532.21 482.22 T
+4 F
+(output-file) 96 456.22 T
+2 F
+(.<) 146 456.22 T
+3 11 Q
+(strftimeresult) 155.77 456.22 T
+4 12 Q
+(>) 248.17 456.22 T
+72 600/G1227 FmPA
+2 F
+(where) 72 430.22 T
+4 F
+(output-file) 104.11 430.22 T
+2 F
+(is) 156.91 430.22 T
+(the) 167.71 430.22 T
+(filename) 185.17 430.22 T
+(specified) 229.96 430.22 T
+(when) 276.07 430.22 T
+(tg) 304.86 430.22 T
+(was) 316.99 430.22 T
+(invoked) 338.45 430.22 T
+(and) 379.91 430.22 T
+(<) 400.04 430.22 T
+3 11 Q
+(strftimeresult>) 406.8 430.22 T
+2 12 Q
+(is) 511.95 430.22 T
+(the) 522.76 430.22 T
+72 574/G1229 FmPA
+(string) 72 406.22 T
+(returned) 102.29 406.22 T
+(from) 145.23 406.22 T
+3 11 Q
+(strftime) 171.51 406.22 T
+2 12 Q
+(with) 230.81 406.22 T
+(all) 255.1 406.22 T
+(forward) 270.05 406.22 T
+(slashes) 310.99 406.22 T
+(replaced) 347.94 406.22 T
+(by) 391.54 406.22 T
+(underscores.) 406.49 406.22 T
+(If) 469.76 406.22 T
+(the) 480.7 406.22 T
+(name) 498.32 406.22 T
+(of) 527.27 406.22 T
+(the) 72 382.22 T
+4 F
+(output-file) 89.66 382.22 T
+2 F
+(contains a suffix, the suffix is appended after the string from) 142.67 382.22 T
+3 11 Q
+(strftime) 435.95 382.22 T
+2 12 Q
+(.) 488.75 382.22 T
+(The) 96 356.22 T
+3 11 Q
+(arrival) 117.66 356.22 T
+2 12 Q
+( clause specifies the interarrival time distribution, and the) 163.86 356.22 T
+3 11 Q
+(length) 442.49 356.22 T
+2 12 Q
+( clause) 482.09 356.22 T
+72 500/G1025 FmPA
+(specifies) 72 332.22 T
+(the) 116.61 332.22 T
+(packet) 133.89 332.22 T
+(length) 167.83 332.22 T
+(distribution..) 200.45 332.22 T
+(The) 264.41 332.22 T
+3 11 Q
+(data) 285.69 332.22 T
+2 12 Q
+(clause) 314.71 332.22 T
+(limits) 347.31 332.22 T
+(the) 377.28 332.22 T
+(total) 394.56 332.22 T
+(amount) 418.52 332.22 T
+(of) 457.14 332.22 T
+(data) 469.75 332.22 T
+(to) 492.36 332.22 T
+(be) 504.32 332.22 T
+(sent) 518.27 332.22 T
+(in) 72 308.22 T
+(bytes) 83.67 308.22 T
+(\050mimicking,) 111.34 308.22 T
+(for) 172.68 308.22 T
+(example,) 189 308.22 T
+(a) 234.99 308.22 T
+(file) 242.66 308.22 T
+(transfer) 260.99 308.22 T
+(operation\051.) 299.97 308.22 T
+(Similarly,) 354.63 308.22 T
+(the) 404.64 308.22 T
+3 11 Q
+(packet) 421.64 308.22 T
+2 12 Q
+(clause) 463.57 308.22 T
+(specifies) 495.89 308.22 T
+(the number of packets to send while the) 72 284.22 T
+3 11 Q
+(time) 265.97 284.22 T
+2 12 Q
+( clause limits the total amount of time spent) 292.37 284.22 T
+(transmitting.) 72 260.22 T
+(The) 135.81 260.22 T
+3 11 Q
+(seed) 157.27 260.22 T
+2 12 Q
+(clause) 186.46 260.22 T
+(sets) 219.25 260.22 T
+(the) 240.05 260.22 T
+(random-number) 257.51 260.22 T
+(generator) 337.63 260.22 T
+(seed) 385.74 260.22 T
+(\050before) 409.86 260.22 T
+(generating) 447.31 260.22 T
+(random) 500.76 260.22 T
+(variables for the arrival and length clauses\051.) 72 236.22 T
+(Where possible, the program attempts to deduce implicit time clauses and) 96 210.22 T
+3 11 Q
+(at) 453.29 210.22 T
+2 12 Q
+( clauses from) 466.49 210.22 T
+72 354/G227 FmPA
+(those of surrounding) 72 186.22 T
+4 F
+(tg-action-list) 174.32 186.22 T
+2 F
+( clauses. In the following example, deduction is not possible:) 236.33 186.22 T
+3 11 Q
+(arrival exponential 0.030 length 120) 96 158.88 T
+72 303/G78 FmPA
+(data 1000000) 96 145.88 T
+(arrival exponential 0.060 length 240) 96 132.88 T
+72 102 540.22 117 C
+0 0 0 1 0 0 0 1 K
+71 109 215 109 2 L
+0.5 H
+2 Z
+0 X
+N
+0 0 612 792 C
+0 0 0 1 0 0 0 1 K
+2 10 Q
+0 X
+(*see the) 72 95.33 T
+3 11 Q
+(strftime) 106.99 95.33 T
+2 10 Q
+( man page for format speci\336cations) 159.79 95.33 T
+72 239/G1049 FmPA
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.9/DEST FmPD2
+FMENDPAGE
+%%EndPage: "9" 10
+%%Page: "10" 11
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(10) 299.33 55 T
+2 F
+(The program cannot know in advance how long it will take to send one million bytes of data) 72 712.22 T
+72 856/G79 FmPA
+(through the network.) 72 688.22 T
+0 F
+(2.4.4) 72 652.22 T
+(Statistical Distributions) 110.69 652.22 T
+72 796/G80 FmPA
+2 F
+(Statistical distributions can be associated with packet interarrival and packet length random) 96 634.22 T
+72 778/G81 FmPA
+(variables. The interarrival distribution is specified with the keyword) 72 610.22 T
+3 11 Q
+(arrival) 401.95 610.22 T
+2 12 Q
+(, while the packet) 448.15 610.22 T
+(length) 72 586.22 T
+(distribution) 104.95 586.22 T
+(is) 163.25 586.22 T
+(preceded) 174.2 586.22 T
+(by) 220.46 586.22 T
+(the) 235.42 586.22 T
+(keyword) 253.03 586.22 T
+3 11 Q
+(length) 297.97 586.22 T
+2 12 Q
+(.) 337.57 586.22 T
+(Currently,) 343.52 586.22 T
+(four) 395.47 586.22 T
+(types) 418.42 586.22 T
+(of) 446.7 586.22 T
+(distributions) 459.65 586.22 T
+(are) 522.61 586.22 T
+(supported\321additional distributions are planned and will be added when implemented. Four) 72 562.22 T
+(keywords are used to specify the distribution that can be used with a) 72 538.22 T
+4 F
+(tg-action) 402.95 538.22 T
+2 F
+( clause.) 446.28 538.22 T
+3 11 Q
+(constant) 96 510.22 T
+4 12 Q
+(value) 155.4 510.22 T
+2 F
+(or) 187.99 510.22 T
+4 F
+(value) 204.59 510.22 T
+72 654/G82 FmPA
+3 11 Q
+(uniform) 96 496.22 T
+4 12 Q
+(max) 148.8 496.22 T
+2 F
+(or) 175.39 496.22 T
+3 11 Q
+( uniform) 185.39 496.22 T
+4 12 Q
+(min max) 244.79 496.22 T
+3 11 Q
+(exponential) 96 482.22 T
+4 12 Q
+(mean) 175.2 482.22 T
+2 F
+(or) 207.79 482.22 T
+3 11 Q
+( exponential) 217.79 482.22 T
+4 12 Q
+(mean min max) 303.59 482.22 T
+3 11 Q
+(markov2) 96 468.22 T
+4 12 Q
+(number) 148.8 468.22 T
+(distribution) 192.06 468.22 T
+(number) 254.68 468.22 T
+(distribution) 297.94 468.22 T
+2 F
+(The) 96 450.22 T
+3 11 Q
+(constant) 117.66 450.22 T
+2 12 Q
+( distribution always returns the number specified in the supplied parameter;) 170.46 450.22 T
+72 594/G83 FmPA
+(and) 72 426.22 T
+(if) 91.42 426.22 T
+(desired,) 100.84 426.22 T
+(the) 140.59 426.22 T
+3 11 Q
+(constant) 157.34 426.22 T
+2 12 Q
+(keyword) 212.23 426.22 T
+(may) 256.31 426.22 T
+(be) 279.07 426.22 T
+(omitted) 292.48 426.22 T
+(entirely.) 331.25 426.22 T
+(The) 373 426.22 T
+3 11 Q
+(uniform) 393.75 426.22 T
+2 12 Q
+(distribution) 442.04 426.22 T
+(requires) 499.47 426.22 T
+(a number specifying the maximum value of the open interval [0,) 72 402.22 T
+4 F
+(max) 383.95 402.22 T
+2 F
+(\051 from which the random) 403.94 402.22 T
+(number) 72 378.22 T
+(is) 111.42 378.22 T
+(drawn.) 122.18 378.22 T
+(If) 157.92 378.22 T
+(the) 168.67 378.22 T
+(left) 186.1 378.22 T
+(endpoint) 204.85 378.22 T
+(is) 249.6 378.22 T
+(also) 260.37 378.22 T
+(specified,) 282.46 378.22 T
+(a) 331.53 378.22 T
+(random) 339.62 378.22 T
+(number) 379.04 378.22 T
+(is) 418.45 378.22 T
+(selected) 429.21 378.22 T
+(from) 470.62 378.22 T
+(the) 496.71 378.22 T
+(open) 514.13 378.22 T
+(interval [) 72 354.22 T
+4 F
+(min) 115.66 354.22 T
+2 F
+(,) 133.66 354.22 T
+4 F
+(max) 139.66 354.22 T
+2 F
+(\051. The) 159.65 354.22 T
+3 11 Q
+(exponential) 191.3 354.22 T
+2 12 Q
+( distribution is the classic distribution with the specified) 263.9 354.22 T
+(mean.) 72 330.22 T
+(As) 103.6 330.22 T
+(with) 119.53 330.22 T
+(the) 143.47 330.22 T
+3 11 Q
+(uniform) 160.74 330.22 T
+2 12 Q
+(distribution,) 212.67 330.22 T
+(it) 273.61 330.22 T
+(is) 282.89 330.22 T
+(possible) 293.5 330.22 T
+(to) 335.44 330.22 T
+(restrict) 347.38 330.22 T
+(the) 383.3 330.22 T
+(values) 400.57 330.22 T
+(that) 433.84 330.22 T
+(are) 454.44 330.22 T
+(returned) 471.7 330.22 T
+(from) 514.28 330.22 T
+(the exponential distribution to only those within the open interval [) 72 306.22 T
+4 F
+(min) 393.32 306.22 T
+2 F
+(,) 411.32 306.22 T
+4 F
+(max) 417.32 306.22 T
+2 F
+(\051; the exponential) 437.32 306.22 T
+(distribution) 72 282.22 T
+(is) 129.75 282.22 T
+(unchanged) 140.15 282.22 T
+(otherwise.) 194.54 282.22 T
+(Specifying) 246.6 282.22 T
+(an) 301 282.22 T
+(upper) 314.73 282.22 T
+(limit) 344.45 282.22 T
+(for) 369.54 282.22 T
+(the) 385.93 282.22 T
+(exponential) 403 282.22 T
+(distribution) 461.39 282.22 T
+(will) 519.14 282.22 T
+(force only reasonably sized packets to be issued; otherwise there is a small probability that an) 72 258.22 T
+(infinite size packet may be generated and will result in an error being reported. The) 72 234.22 T
+3 11 Q
+(markov2) 475.24 234.22 T
+2 12 Q
+(keyword) 72 210.22 T
+(specifies) 116.55 210.22 T
+(a) 161.09 210.22 T
+(two-state) 168.98 210.22 T
+(markov) 215.53 210.22 T
+(distribution:) 254.75 210.22 T
+(the) 315.98 210.22 T
+(first) 333.21 210.22 T
+(number) 355.1 210.22 T
+(gives) 394.32 210.22 T
+(the) 422.21 210.22 T
+(mean) 439.43 210.22 T
+(time) 467.98 210.22 T
+(in) 491.87 210.22 T
+(state) 503.77 210.22 T
+(1;) 528.32 210.22 T
+(the) 72 186.22 T
+(second) 88.92 186.22 T
+(number) 124.5 186.22 T
+(gives) 163.41 186.22 T
+(the) 191 186.22 T
+(mean) 207.92 186.22 T
+(time) 236.16 186.22 T
+(in) 259.76 186.22 T
+(state) 271.35 186.22 T
+(2.) 295.6 186.22 T
+(Each) 306.85 186.22 T
+(state) 333.09 186.22 T
+(is) 357.34 186.22 T
+(associated) 367.6 186.22 T
+(with) 419.18 186.22 T
+(its) 442.77 186.22 T
+(own) 456.36 186.22 T
+(distribution;) 479.28 186.22 T
+(these distributions could themselves be markov2 distributions, if desired. As shown above, the) 72 162.22 T
+(italicized parameter) 72 138.22 T
+4 F
+(distribution) 169.97 138.22 T
+2 F
+( is a placeholder for a keyword from the set:) 225.98 138.22 T
+3 11 Q
+(constant,) 441.26 138.22 T
+(uniform, exponential, and markov2) 72 114.22 T
+2 12 Q
+(.) 289.8 114.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.10/DEST FmPD2
+FMENDPAGE
+%%EndPage: "10" 11
+%%Page: "11" 12
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(11) 299.33 55 T
+0 F
+(2.5) 72 712.22 T
+(EXAMPLES) 100.68 712.22 T
+72 856/G84 FmPA
+2 F
+(The following simple example illustrates the specification entries for a TCP traffic source.) 96 694.22 T
+72 838/G85 FmPA
+3 11 Q
+(on 0:15) 96 666.88 T
+72 811/G86 FmPA
+(tcp 128.18.4.97.2345) 96 653.88 T
+(at 5 setup) 96 640.88 T
+(at 6 arrival exponential 0.1 length exponential 576) 96 627.88 T
+(seed 321423 time 10) 96 614.88 T
+2 12 Q
+(The) 96 597.22 T
+3 11 Q
+(on 0:15) 117.66 597.22 T
+2 12 Q
+( command instructs the TG program to wait until the next 15-second time) 163.86 597.22 T
+72 741/G87 FmPA
+(boundary) 72 573.22 T
+(approaches) 120.17 573.22 T
+(before) 176.99 573.22 T
+(initiating) 210.49 573.22 T
+(any) 256.68 573.22 T
+(protocol) 276.86 573.22 T
+(activity.) 319.7 573.22 T
+(Since) 361.55 573.22 T
+(the) 391.06 573.22 T
+(keyword) 408.57 573.22 T
+3 11 Q
+(server) 453.41 573.22 T
+2 12 Q
+(is) 495.86 573.22 T
+(absent) 506.71 573.22 T
+(in the) 72 549.22 T
+4 F
+(association-spec) 102 549.22 T
+2 F
+( line, TG will initiate a TCP traffic connection to the node address) 181.99 549.22 T
+6 11 Q
+(128.18.4.97, port 2345) 72 525.22 T
+2 12 Q
+(. The) 217.2 525.22 T
+3 11 Q
+(setup) 244.86 525.22 T
+2 12 Q
+( command, which is activated 5 seconds after) 277.86 525.22 T
+(synchronizing) 72 501.22 T
+(on) 142.8 501.22 T
+(the) 157.6 501.22 T
+(closest) 175.07 501.22 T
+(15-second) 210.54 501.22 T
+(boundary,) 262.67 501.22 T
+(initiates) 313.8 501.22 T
+(a) 354.61 501.22 T
+(connection) 362.75 501.22 T
+(request) 418.21 501.22 T
+(to) 455.67 501.22 T
+(the) 467.81 501.22 T
+(traffic) 485.28 501.22 T
+(sink) 517.41 501.22 T
+(node. One second later, traffic will be sent across the connection with an exponential interarrival) 72 477.22 T
+(distribution with a mean of 0.1 seconds. The TCP segment size is also exponentially distributed) 72 453.22 T
+(with) 72 429.22 T
+(a) 96 429.22 T
+(mean) 103.99 429.22 T
+(of) 132.64 429.22 T
+(576) 145.3 429.22 T
+(bytes.) 165.97 429.22 T
+(The) 196.96 429.22 T
+(last) 218.28 429.22 T
+(line) 237.61 429.22 T
+(sets) 258.28 429.22 T
+(the) 278.94 429.22 T
+(random) 296.27 429.22 T
+(number) 335.59 429.22 T
+(seed) 374.91 429.22 T
+(and) 398.9 429.22 T
+(limits) 418.89 429.22 T
+(the) 448.9 429.22 T
+(test) 466.23 429.22 T
+(duration) 485.56 429.22 T
+(to) 528.22 429.22 T
+(10 seconds.) 72 405.22 T
+(A) 96 379.22 T
+(TG) 107.02 379.22 T
+(must) 125.36 379.22 T
+(serve) 151.06 379.22 T
+(as) 178.73 379.22 T
+(a) 191.08 379.22 T
+(traffic) 198.76 379.22 T
+(sink,) 230.43 379.22 T
+(before) 255.79 379.22 T
+(TCP) 288.79 379.22 T
+(traffic) 313.15 379.22 T
+(can) 344.82 379.22 T
+(be) 363.82 379.22 T
+(exchanged) 377.5 379.22 T
+(with) 431.17 379.22 T
+(the) 454.86 379.22 T
+(traffic) 471.87 379.22 T
+(source.) 503.54 379.22 T
+72 523/G228 FmPA
+(The specification entries for a traffic sink are simpler, and are as follows:) 72 355.22 T
+3 11 Q
+(on 0:15 tcp 128.18.4.97.2345 server) 96 327.88 T
+72 472/G88 FmPA
+(at 1.1 wait) 96 314.88 T
+2 12 Q
+(Note that the) 72 297.22 T
+3 11 Q
+(server) 136.99 297.22 T
+2 12 Q
+( keyword is present, and that the TG enters into the TG) 176.59 297.22 T
+3 11 Q
+(wait) 444.22 297.22 T
+2 12 Q
+( state,) 470.62 297.22 T
+72 441/G89 FmPA
+(1.1) 72 273.22 T
+(seconds after the start time synchronization boundary.) 90 273.22 T
+(Other examples of TG scripts can be found in the) 96 247.22 T
+3 11 Q
+(./examples) 335.95 247.22 T
+2 12 Q
+( directory supplied with the) 401.95 247.22 T
+72 391/G229 FmPA
+(software distribution.) 72 223.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.11/DEST FmPD2
+FMENDPAGE
+%%EndPage: "11" 12
+%%Page: "12" 13
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(12) 299.33 55 T
+0 14 Q
+(3) 262.93 710.88 T
+(LOG FILE) 284.72 710.88 T
+72 855/G90 FmPA
+2 12 Q
+(The TG program records all notable events in a log file for post-test analysis. With the) 96 680.22 T
+72 824/G91 FmPA
+(exception of the header descriptor, the TG log file is encoded in binary form to conserve storage) 72 656.22 T
+(space. Some binary fields are encoded with a variable-length code for additional space savings.) 72 632.22 T
+(Such) 72 608.22 T
+(fields) 99 608.22 T
+(are) 128.66 608.22 T
+(stored) 146.31 608.22 T
+(as) 178.64 608.22 T
+(a) 191.63 608.22 T
+(sequence) 199.96 608.22 T
+(of) 246.93 608.22 T
+(bytes:) 259.93 608.22 T
+(seven) 291.59 608.22 T
+(bits) 321.92 608.22 T
+(per) 342.25 608.22 T
+(byte) 360.58 608.22 T
+(in) 384.24 608.22 T
+(little-endian) 396.57 608.22 T
+(format.) 457.57 608.22 T
+(The) 495.55 608.22 T
+(sign) 517.21 608.22 T
+(bit) 72 584.22 T
+(is) 87.38 584.22 T
+(set) 98.1 584.22 T
+(to) 114.14 584.22 T
+(one,) 126.19 584.22 T
+(to) 149.23 584.22 T
+(indicate) 161.28 584.22 T
+(that) 201.98 584.22 T
+(the) 222.69 584.22 T
+(field) 240.07 584.22 T
+(continues) 264.77 584.22 T
+(into) 313.48 584.22 T
+(the) 334.86 584.22 T
+(next) 352.24 584.22 T
+(byte,) 375.62 584.22 T
+(or) 401.99 584.22 T
+(cleared) 414.7 584.22 T
+(to) 452.05 584.22 T
+(zero) 464.1 584.22 T
+(to) 487.46 584.22 T
+(indicate) 499.51 584.22 T
+(that this is the last byte forming a number. Note that the value of the number is unaffected if the) 72 560.22 T
+(last byte is 0x00. This allows a trailing 0x00 to be used to flag the number as being special in) 72 536.22 T
+(some) 72 512.22 T
+(way.) 100.33 512.22 T
+(In general, the supplied) 96 486.22 T
+3 11 Q
+(dcat) 211.64 486.22 T
+2 12 Q
+( program should be used to expand a TG log file into readable) 238.04 486.22 T
+72 630/G230 FmPA
+(text form. The) 72 462.22 T
+3 11 Q
+(dcat) 143.99 462.22 T
+2 12 Q
+( filter is distributed with the release in the) 170.39 462.22 T
+3 11 Q
+(./bin) 373.37 462.22 T
+2 12 Q
+(and) 412.97 462.22 T
+3 11 Q
+(./src/dcat) 433.3 462.22 T
+2 12 Q
+(directories. The syntax for invoking the) 72 438.22 T
+3 11 Q
+(dcat) 264.97 438.22 T
+2 12 Q
+(program is:) 297.97 438.22 T
+3 11 Q
+(dcat[-a]) 96 413.88 T
+72 558/G976 FmPA
+2 12 Q
+(The) 72 389.22 T
+3 11 Q
+(-a) 93.66 389.22 T
+2 12 Q
+( option indicates the timestamps should be reported as absolute rather than relative. This) 106.86 389.22 T
+72 533/G995 FmPA
+(allows time-correlation of data from multiple log files.) 72 365.22 T
+0 F
+(3.1) 72 329.22 T
+(LOG FILE HEADER) 100.68 329.22 T
+72 473/G92 FmPA
+2 F
+(An ASCII header prefaces each log file and provides general information about the test) 96 311.22 T
+72 455/G93 FmPA
+(session that generated the log data. The information stored in the header of the log file includes) 72 287.22 T
+(the) 72 263.22 T
+(following:) 89.66 263.22 T
+(\245) 96 237.22 T
+(Header file version) 114 237.22 T
+72 381/G94 FmPA
+(\245) 96 211.22 T
+(Version of the TG program used) 114 211.22 T
+72 355/G95 FmPA
+(\245) 96 185.22 T
+(User who created the log file and the machine name where TG was executed) 114 185.22 T
+72 329/G1571 FmPA
+(\245) 96 159.22 T
+(Machine configuration) 114 159.22 T
+72 303/G1575 FmPA
+(\245) 96 133.22 T
+(Name of the TG specification file) 114 133.22 T
+72 277/G1578 FmPA
+(\245) 96 107.22 T
+(Start time of the test) 114 107.22 T
+72 251/G1058 FmPA
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.12/DEST FmPD2
+FMENDPAGE
+%%EndPage: "12" 13
+%%Page: "13" 14
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(13) 299.33 55 T
+2 F
+(\245) 96 712.22 T
+(Name of the protocol under test) 114 712.22 T
+72 856/G98 FmPA
+(\245) 96 686.22 T
+(Address family indicator.) 114 686.22 T
+72 830/G99 FmPA
+(The ASCII header portion of the log file may be viewed directly by using the UNIX filter) 96 660.22 T
+72 804/G101 FmPA
+3 11 Q
+(head) 72 636.22 T
+2 12 Q
+( to extract the first several lines of the file. The ASCII header is delimited by the strings) 98.4 636.22 T
+(<Begin TG Header> and <End TG Header>. Note that the first character on the next new line,) 72 612.22 T
+(following the ASCII header, contains a binary TG log record.) 72 588.22 T
+0 F
+(3.2) 72 552.22 T
+(LOG FILE RECORD FORMAT) 100.68 552.22 T
+72 696/G102 FmPA
+2 F
+(The) 96 534.22 T
+3 11 Q
+(dcat) 116.94 534.22 T
+2 12 Q
+(program) 145.63 534.22 T
+(converts) 188.57 534.22 T
+(TG) 231.51 534.22 T
+(log) 249.79 534.22 T
+(records) 267.41 534.22 T
+(into) 305.01 534.22 T
+(a) 325.97 534.22 T
+(readable) 333.58 534.22 T
+(ASCII) 376.51 534.22 T
+(format) 410.12 534.22 T
+(and) 444.4 534.22 T
+(prints) 464.01 534.22 T
+(its) 493.64 534.22 T
+(output) 507.26 534.22 T
+72 678/G2160 FmPA
+(to) 72 510.22 T
+(stdout.) 83.9 510.22 T
+(The) 118.81 510.22 T
+(output) 140.04 510.22 T
+(from) 173.28 510.22 T
+(the) 199.17 510.22 T
+3 11 Q
+(dcat) 216.4 510.22 T
+2 12 Q
+(program) 248.45 510.22 T
+(can) 291.67 510.22 T
+(be) 310.9 510.22 T
+(fed) 324.79 510.22 T
+(into) 342.68 510.22 T
+3 11 Q
+(awk,) 363.92 510.22 T
+(perl,) 395.97 510.22 T
+2 12 Q
+(or) 434.62 510.22 T
+(other) 447.18 510.22 T
+(similar) 474.41 510.22 T
+(string) 510.31 510.22 T
+(processing) 72 486.22 T
+(programs.) 125.95 486.22 T
+3 11 Q
+(Gengraph.pl) 176.91 486.22 T
+2 12 Q
+(is) 255.29 486.22 T
+(provided) 265.93 486.22 T
+(as) 311.22 486.22 T
+(an) 323.84 486.22 T
+(example) 337.8 486.22 T
+(\050) 381.09 486.22 T
+(See) 387.71 486.22 T
+(\322Visualization) 407.67 486.22 T
+(Support\323) 479.62 486.22 T
+(on) 525.59 486.22 T
+(page) 72 462.22 T
+(16.\051) 97.66 462.22 T
+3 11 Q
+(Dcat) 119.65 462.22 T
+2 12 Q
+( output lines have the following format:) 146.05 462.22 T
+3 11 Q
+(<Event Timestamp> <Event Type> <Address> <Event Data>) 96 434.88 T
+72 579/G2164 FmPA
+2 12 Q
+(An example of the output from the) 72 417.22 T
+3 11 Q
+(dcat) 241.64 417.22 T
+2 12 Q
+( program is shown below.) 268.04 417.22 T
+72 561/G105 FmPA
+7 F
+(Event Timestamp) 96 209.22 T
+2 F
+(. The event timestamp field is printed as the number of seconds since the) 187 209.22 T
+72 353/G106 FmPA
+(start of the test run; that is, the time since the) 72 185.22 T
+3 11 Q
+(on) 290.65 185.22 T
+2 12 Q
+( clause was satisfied unless the) 303.85 185.22 T
+3 11 Q
+([-a]) 455.16 185.22 T
+2 12 Q
+( option was) 481.56 185.22 T
+(given. Note that the event timestamp is not specified relative to the) 72 161.22 T
+3 11 Q
+(at) 396.3 161.22 T
+2 12 Q
+( clause. Although the) 409.5 161.22 T
+(timestamp field is printed with microsecond resolution, the actual precision of the timestamp) 72 137.22 T
+(depends upon the granularity returned by the) 72 113.22 T
+3 11 Q
+(gettimeofday) 290.29 113.22 T
+2 12 Q
+( system call.) 369.49 113.22 T
+0 F
+(T) 285.97 393.22 T
+(ab) 292.34 393.22 T
+(le) 306.23 393.22 T
+(1) 319.57 393.22 T
+72 537/G156 FmPA
+0 8 Q
+(Time) 103.77 369.88 T
+72 514/G107 FmPA
+(T) 186.01 369.88 T
+(ype) 190.42 369.88 T
+155 514/G108 FmPA
+(Ad) 287.14 369.88 T
+(dress) 297.73 369.88 T
+236 514/G109 FmPA
+(ID) 415.61 369.88 T
+371 514/G110 FmPA
+(Length) 491.28 369.88 T
+469 514/G111 FmPA
+1 10 Q
+(0.003678) 79.61 346.55 T
+72 491/G112 FmPA
+(Setup) 162.61 346.55 T
+155 491/G164 FmPA
+236 491/G165 FmPA
+371 491/G166 FmPA
+469 491/G167 FmPA
+(10.061812) 79.61 322.55 T
+72 467/G168 FmPA
+(Accept) 162.61 322.55 T
+155 467/G169 FmPA
+(128.18.6.90.1626) 243.61 322.55 T
+236 467/G170 FmPA
+(Association) 378.61 322.55 T
+371 467/G171 FmPA
+(4) 476.61 322.55 T
+469 467/G172 FmPA
+(11.041100) 79.61 298.55 T
+72 443/G173 FmPA
+(T) 162.61 298.55 T
+(r) 167.52 298.55 T
+(ansmit) 170.75 298.55 T
+155 443/G174 FmPA
+(128.18.6.90.2346) 243.61 298.55 T
+236 443/G175 FmPA
+(0) 378.61 298.55 T
+371 443/G176 FmPA
+(1460) 476.61 298.55 T
+469 443/G177 FmPA
+(11.041244) 79.61 274.55 T
+72 419/G178 FmPA
+(Receiv) 162.61 274.55 T
+(e) 192.92 274.55 T
+155 419/G179 FmPA
+(128.18.6.90.1626) 243.61 274.55 T
+236 419/G180 FmPA
+(0) 378.61 274.55 T
+371 419/G181 FmPA
+(1460) 476.61 274.55 T
+469 419/G182 FmPA
+(16.006682) 79.61 250.55 T
+72 395/G183 FmPA
+(T) 162.61 250.55 T
+(eardo) 167.52 250.55 T
+(wn) 192.94 250.55 T
+155 395/G184 FmPA
+236 395/G185 FmPA
+371 395/G186 FmPA
+469 395/G187 FmPA
+71.61 361.22 540.61 361.22 2 L
+V
+0.5 H
+0 Z
+N
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.13/DEST FmPD2
+[/Rect[387 482 540 495]/Border[0 0 0]/Page 17/View[/XYZ null 246 864 FmDC exch pop null]/LNK FmPD
+[/Rect[72 458 114 482]/Border[0 0 0]/Page 17/View[/XYZ null 246 864 FmDC exch pop null]/LNK FmPD
+FMENDPAGE
+%%EndPage: "13" 14
+%%Page: "14" 15
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(14) 299.33 55 T
+7 F
+(Event) 96 712.22 T
+(Types) 128.25 712.22 T
+2 F
+(.) 158.92 712.22 T
+(TG) 164.16 712.22 T
+(event) 182.41 712.22 T
+(types) 210.65 712.22 T
+(include) 238.22 712.22 T
+(the) 275.8 712.22 T
+(majority) 292.71 712.22 T
+(of) 335.62 712.22 T
+(the) 347.86 712.22 T
+(common) 364.77 712.22 T
+(events) 409.02 712.22 T
+(that) 441.93 712.22 T
+(can) 462.17 712.22 T
+(be) 481.08 712.22 T
+(observed) 494.65 712.22 T
+72 856/G113 FmPA
+(from the UNIX user-process level. The event types include the following:) 72 688.22 T
+(\245) 96 662.22 T
+3 11 Q
+(Receive) 114 662.22 T
+2 12 Q
+(\321indicates a packet was received.) 160.2 662.22 T
+72 806/G114 FmPA
+(\245) 96 636.22 T
+3 11 Q
+(Transmit) 114 636.22 T
+2 12 Q
+(\321indicates a packet has been transmitted.) 166.8 636.22 T
+72 780/G115 FmPA
+(\245) 96 610.22 T
+3 11 Q
+(Setup) 114 610.22 T
+2 12 Q
+(\321indicates protocol initialization is complete.) 147 610.22 T
+72 754/G116 FmPA
+(\245) 96 584.22 T
+3 11 Q
+(Accept) 114 584.22 T
+2 12 Q
+(\321indicates a connection has been established.) 153.6 584.22 T
+72 728/G117 FmPA
+(\245) 96 558.22 T
+3 11 Q
+(Teardown) 114 558.22 T
+2 12 Q
+(\321indicates a connection has been torn down.) 166.8 558.22 T
+72 702/G118 FmPA
+(\245) 96 532.22 T
+3 11 Q
+(Error) 114 532.22 T
+2 12 Q
+(\321indicates an error in the program was detected.) 147 532.22 T
+72 676/G119 FmPA
+7 F
+(Addresses) 96 506.22 T
+2 F
+(.) 148 506.22 T
+(The) 153.45 506.22 T
+(address) 174.56 506.22 T
+(field) 213 506.22 T
+(specifies) 237.45 506.22 T
+(the) 281.89 506.22 T
+(TG) 299 506.22 T
+(peer) 317.45 506.22 T
+(that) 340.55 506.22 T
+(generated) 361 506.22 T
+(the) 410.1 506.22 T
+(event.) 427.21 506.22 T
+(Depending) 458.66 506.22 T
+(upon) 513.76 506.22 T
+72 650/G120 FmPA
+(the event type, the address may indicate the source of a received packet or the destination of a) 72 482.22 T
+(transmitted packet. Addresses take the form of an Internet address with a port number appended) 72 458.22 T
+(to) 72 434.22 T
+(it.) 84.34 434.22 T
+7 F
+(Event) 96 408.22 T
+(Data) 128.26 408.22 T
+2 F
+(.) 152.92 408.22 T
+(Event) 158.19 408.22 T
+(data) 188.45 408.22 T
+(are) 210.7 408.22 T
+(present) 227.62 408.22 T
+(only) 264.54 408.22 T
+(for) 288.14 408.22 T
+(certain) 304.4 408.22 T
+(event) 339.31 408.22 T
+(types.) 367.57 408.22 T
+(For) 398.16 408.22 T
+3 11 Q
+(Receive) 417.1 408.22 T
+2 12 Q
+(and) 465.56 408.22 T
+3 11 Q
+(Transmit) 485.15 408.22 T
+72 552/G188 FmPA
+2 12 Q
+(events,) 72 384.22 T
+(a) 108.46 384.22 T
+(datagram/segment) 116.59 384.22 T
+(identification) 207.38 384.22 T
+(number) 274.18 384.22 T
+(is) 313.64 384.22 T
+(printed.) 324.45 384.22 T
+(The) 364.25 384.22 T
+(length) 385.71 384.22 T
+(of) 418.52 384.22 T
+(the) 431.31 384.22 T
+(received) 448.78 384.22 T
+(datagram/) 492.23 384.22 T
+(segment) 72 360.22 T
+(is) 114.56 360.22 T
+(also) 125.13 360.22 T
+(printed.) 147.02 360.22 T
+(For) 186.58 360.22 T
+3 11 Q
+(Accept) 205.81 360.22 T
+2 12 Q
+(events,) 247.98 360.22 T
+(the) 284.2 360.22 T
+(address) 301.43 360.22 T
+(of) 339.98 360.22 T
+(the) 352.54 360.22 T
+(connection) 369.77 360.22 T
+(peer) 424.99 360.22 T
+(is) 448.2 360.22 T
+(printed,) 458.77 360.22 T
+(together) 498.33 360.22 T
+(with the association number. For) 72 336.22 T
+3 11 Q
+(Setup) 232.66 336.22 T
+2 12 Q
+( and) 265.66 336.22 T
+3 11 Q
+(Teardown) 288.98 336.22 T
+2 12 Q
+( events, no other data is provided.) 341.78 336.22 T
+(An identification number is used to reference a datagram or a segment within a stream. For) 96 310.22 T
+72 454/G231 FmPA
+(stream protocols, the identification field specifies the position of the first received byte in the) 72 286.22 T
+(stream: consequently, the identification field added to the length field gives the total number of) 72 262.22 T
+(bytes transferred at the event time.) 72 238.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.14/DEST FmPD2
+FMENDPAGE
+%%EndPage: "14" 15
+%%Page: "15" 16
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(15) 299.33 55 T
+2 F
+(An) 96 712.22 T
+3 11 Q
+(Error) 113.66 712.22 T
+2 12 Q
+( event type is also provided to record errors as they occur during the execution of) 146.66 712.22 T
+72 856/G2173 FmPA
+(the) 72 688.22 T
+(program.) 89.55 688.22 T
+(Depending) 136.09 688.22 T
+(upon) 191.62 688.22 T
+(when) 218.51 688.22 T
+(the) 247.38 688.22 T
+(error) 264.93 688.22 T
+(takes) 291.13 688.22 T
+(place,) 318.67 688.22 T
+(an) 349.87 688.22 T
+(address) 364.08 688.22 T
+(may) 402.95 688.22 T
+(or) 426.5 688.22 T
+(may) 439.38 688.22 T
+(not) 462.93 688.22 T
+(be) 481.15 688.22 T
+(recorded) 495.36 688.22 T
+(in the log file. The error codes are described in) 72 664.22 T
+3 11 Q
+(log.h) 299.6 664.22 T
+2 12 Q
+( and are reprinted below.) 332.6 664.22 T
+0 F
+(3.3) 72 404.22 T
+(INTERNAL LOG FILE FORMAT) 100.68 404.22 T
+72 548/G121 FmPA
+2 F
+(For) 96 386.22 T
+(those) 115.23 386.22 T
+(wishing) 143.12 386.22 T
+(to) 183.68 386.22 T
+(write) 195.57 386.22 T
+(their) 222.79 386.22 T
+(own) 247.35 386.22 T
+(filters) 270.57 386.22 T
+(or) 301.12 386.22 T
+(data) 313.68 386.22 T
+(manipulation) 336.23 386.22 T
+(programs) 402.12 386.22 T
+(in) 450 386.22 T
+(order) 461.9 386.22 T
+(to) 489.77 386.22 T
+(process) 501.67 386.22 T
+72 530/G129 FmPA
+(a log file directly, the log file is organized as a sequence of records, with each record having as a) 72 362.22 T
+(minimum) 72 338.22 T
+(the) 121.54 338.22 T
+(record) 139.06 338.22 T
+(type,) 172.57 338.22 T
+(control,) 199.09 338.22 T
+(and) 238.94 338.22 T
+(timestamp) 259.13 338.22 T
+(fields.) 311.99 338.22 T
+(The) 344.51 338.22 T
+(form) 366.03 338.22 T
+(of) 392.22 338.22 T
+(the) 405.07 338.22 T
+(binary) 422.59 338.22 T
+(log) 456.11 338.22 T
+(file) 474.3 338.22 T
+(is) 493.16 338.22 T
+(similar) 504.02 338.22 T
+(to the tables printed by the) 72 314.22 T
+3 11 Q
+(dcat) 202.66 314.22 T
+2 12 Q
+(program. The source code in the) 235.66 314.22 T
+3 11 Q
+(dcat) 393.95 314.22 T
+2 12 Q
+( filter should provide a) 420.35 314.22 T
+(good starting point. The format is as follows.) 72 290.22 T
+3 11 Q
+(<) 96 262.88 T
+(Receive) 108.31 262.88 T
+(>) 160.22 262.88 T
+(<) 172.53 262.88 T
+(Control) 184.84 262.88 T
+(>) 236.75 262.88 T
+(<) 249.06 262.88 T
+(Time) 261.37 262.88 T
+(>) 293.48 262.88 T
+(<) 305.8 262.88 T
+(Address) 318.11 262.88 T
+(>) 370.02 262.88 T
+(<) 382.33 262.88 T
+(Id) 394.64 262.88 T
+(>) 413.55 262.88 T
+(<) 425.86 262.88 T
+(Size) 438.17 262.88 T
+(>) 470.28 262.88 T
+([) 482.59 262.88 T
+(Errno) 494.9 262.88 T
+(]) 533.61 262.88 T
+72 407/G130 FmPA
+(<) 96 249.88 T
+(Transmit) 107.98 249.88 T
+(>) 166.16 249.88 T
+(<) 178.14 249.88 T
+(Control) 190.12 249.88 T
+(>) 241.7 249.88 T
+(<) 253.68 249.88 T
+(Time) 265.67 249.88 T
+(>) 297.45 249.88 T
+(<) 309.43 249.88 T
+(Address) 321.41 249.88 T
+(>) 372.99 249.88 T
+(<) 384.97 249.88 T
+(Id) 396.95 249.88 T
+(>) 415.53 249.88 T
+(<) 427.51 249.88 T
+(Size) 439.49 249.88 T
+(>) 471.27 249.88 T
+([) 483.25 249.88 T
+(Errno) 495.23 249.88 T
+(]) 533.61 249.88 T
+(< Setup > < Control> < Time > [ Errno ]) 96 236.88 T
+(< Teardown > < Control> < Time > [ Errno ]) 96 223.88 T
+(<) 96 210.88 T
+(Accept) 108.91 210.88 T
+(>) 154.83 210.88 T
+(<) 167.74 210.88 T
+(Control) 180.65 210.88 T
+(>) 233.17 210.88 T
+(<) 246.08 210.88 T
+(Time) 258.99 210.88 T
+(>) 291.71 210.88 T
+(<Address) 304.62 210.88 T
+(>) 363.73 210.88 T
+(<) 376.65 210.88 T
+(Association) 389.56 210.88 T
+(>) 468.47 210.88 T
+([) 481.39 210.88 T
+(Errno) 494.3 210.88 T
+(]) 533.61 210.88 T
+(< Error > < Control > < Time > < Address > < Error Type >) 96 197.88 T
+2 12 Q
+(Consult the) 72 180.22 T
+3 11 Q
+(tg) 130.01 180.22 T
+2 12 Q
+( and) 143.21 180.22 T
+3 11 Q
+(dcat) 166.54 180.22 T
+2 12 Q
+( source code for the elaboration of each field. As detailed above, the) 192.94 180.22 T
+72 324/G136 FmPA
+([) 72 156.22 T
+3 11 Q
+(Errno) 82.6 156.22 T
+2 12 Q
+( ] field holds the UNIX error file number and will very likely not be present in most) 115.6 156.22 T
+(records.) 72 132.22 T
+0 F
+(T) 285.97 640.22 T
+(ab) 292.34 640.22 T
+(le) 306.23 640.22 T
+(2) 319.57 640.22 T
+53 784/G240 FmPA
+(T) 285.97 614.22 T
+(ab) 292.34 614.22 T
+(le) 306.23 614.22 T
+(3) 319.57 614.22 T
+53 758/G2170 FmPA
+1 10 Q
+(#de\336) 61.11 589.55 T
+(ne LOGERR_INTFMT) 82.79 589.55 T
+53 734/G192 FmPA
+2 F
+(1) 254.98 591.55 T
+213 736/G193 FmPA
+1 F
+(/* Scr) 281.24 589.55 T
+(ipt f) 305.84 589.55 T
+(or) 321.66 589.55 T
+(mat error */) 330.8 589.55 T
+273 734/G194 FmPA
+(#de\336) 61.11 565.55 T
+(ne LOGERR_MEM) 82.79 565.55 T
+53 710/G195 FmPA
+2 F
+(2) 254.98 567.55 T
+213 712/G196 FmPA
+1 F
+(/* Out of memor) 281.24 565.55 T
+(y */) 352.12 565.55 T
+273 710/G197 FmPA
+(#de\336) 61.11 541.55 T
+(ne LOGERR_2SETUP) 82.79 541.55 T
+53 686/G198 FmPA
+2 F
+(3) 254.98 543.55 T
+213 688/G199 FmPA
+1 F
+(/* T) 281.24 541.55 T
+(w) 295.6 541.55 T
+(o connections w) 302.72 541.55 T
+(ere estab) 374.32 541.55 T
+(lished */) 415.81 541.55 T
+273 686/G200 FmPA
+(#de\336) 61.11 517.55 T
+(ne LOGERR_GETTIME) 82.79 517.55 T
+53 662/G201 FmPA
+2 F
+(4) 254.98 519.55 T
+213 664/G202 FmPA
+1 F
+(/* gettimeofda) 281.24 517.55 T
+(y\050\051 f) 342.64 517.55 T
+(ailed */) 359.56 517.55 T
+273 662/G203 FmPA
+(#de\336) 61.11 493.55 T
+(ne LOGERR_SELECT) 82.79 493.55 T
+53 638/G204 FmPA
+2 F
+(5) 254.98 495.55 T
+213 640/G205 FmPA
+1 F
+(/* select\050\051 f) 281.24 493.55 T
+(ailed */) 328.73 493.55 T
+273 638/G206 FmPA
+(#de\336) 61.11 469.55 T
+(ne LOGERR_FCNTL) 82.79 469.55 T
+53 614/G207 FmPA
+2 F
+(6) 254.98 471.55 T
+213 616/G208 FmPA
+1 F
+(/* fcntl\050\051 f) 281.24 469.55 T
+(ailed */) 320.95 469.55 T
+273 614/G209 FmPA
+(#de\336) 61.11 445.55 T
+(ne LOGERR_GETPEER) 82.79 445.55 T
+53 590/G210 FmPA
+2 F
+(7) 254.98 447.55 T
+213 592/G211 FmPA
+1 F
+(/* getpeer) 281.24 445.55 T
+(name\050\051 f) 324.85 445.55 T
+(ailed */) 361.78 445.55 T
+273 590/G212 FmPA
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.15/DEST FmPD2
+FMENDPAGE
+%%EndPage: "15" 16
+%%Page: "16" 17
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(16) 299.33 55 T
+0 14 Q
+(4) 223.65 710.88 T
+(Visualization Support) 245.43 710.88 T
+72 855/G137 FmPA
+2 12 Q
+(The) 96 680.22 T
+(TG) 117.14 680.22 T
+(distribution) 135.61 680.22 T
+(includes) 193.43 680.22 T
+(a) 235.9 680.22 T
+(perl) 243.71 680.22 T
+(script) 264.85 680.22 T
+(called) 293.99 680.22 T
+3 11 Q
+(gengraph.pl) 325.12 680.22 T
+2 12 Q
+(in) 403.17 680.22 T
+(the) 414.99 680.22 T
+3 11 Q
+(./bin) 432.13 680.22 T
+2 12 Q
+(directory.) 467.61 680.22 T
+(This) 516.4 680.22 T
+72 824/G1064 FmPA
+(script takes the TG binary log files and produces information suitable for viewing by either) 72 656.22 T
+3 11 Q
+(xgraph) 72 632.22 T
+2 12 Q
+(,) 111.6 632.22 T
+3 11 Q
+(xplot) 117.24 632.22 T
+2 12 Q
+(,) 150.24 632.22 T
+(or) 155.88 632.22 T
+3 11 Q
+(gnuplot.) 168.51 632.22 T
+(Dcat) 223.95 632.22 T
+2 12 Q
+(is) 252.99 632.22 T
+(used) 263.63 632.22 T
+(as) 288.26 632.22 T
+(part) 300.9 632.22 T
+(of) 322.2 632.22 T
+(this) 334.83 632.22 T
+(process) 354.81 632.22 T
+(and) 393.43 632.22 T
+(must) 413.4 632.22 T
+(be) 439.38 632.22 T
+(in) 453.34 632.22 T
+(the) 465.32 632.22 T
+(user\325s) 482.62 632.22 T
+(path.) 513.91 632.22 T
+(The syntax for invoking this script is:) 72 608.22 T
+3 11 Q
+(gengraph.pl) 96 582.22 T
+2 12 Q
+( [) 168.6 582.22 T
+3 11 Q
+(-h) 175.6 582.22 T
+2 12 Q
+( |) 188.8 582.22 T
+3 11 Q
+(--help]) 197.2 582.22 T
+2 12 Q
+( [) 243.4 582.22 T
+3 11 Q
+(-c) 250.39 582.22 T
+4 12 Q
+(client-file) 266.59 582.22 T
+2 F
+(] [) 312.59 582.22 T
+3 11 Q
+(-s) 323.58 582.22 T
+4 12 Q
+(server-file) 343.38 582.22 T
+2 F
+(] [) 392.7 582.22 T
+3 11 Q
+(-o) 403.69 582.22 T
+4 12 Q
+(output-file) 419.89 582.22 T
+2 F
+(]) 469.9 582.22 T
+72 726/G1166 FmPA
+([) 96 556.22 T
+3 11 Q
+(-f xplot) 100 556.22 T
+2 12 Q
+( |) 152.8 556.22 T
+3 11 Q
+(xgraph) 161.2 556.22 T
+2 12 Q
+( |) 200.8 556.22 T
+3 11 Q
+(gnuplot) 209.2 556.22 T
+2 12 Q
+(] [) 255.4 556.22 T
+3 11 Q
+(-SQ) 266.39 556.22 T
+2 12 Q
+(] [) 286.19 556.22 T
+3 11 Q
+(-DR) 297.18 556.22 T
+2 12 Q
+(] [) 316.98 556.22 T
+3 11 Q
+(-S) 327.97 556.22 T
+2 12 Q
+(] [) 341.17 556.22 T
+3 11 Q
+(-R) 352.16 556.22 T
+2 12 Q
+(] [) 365.36 556.22 T
+3 11 Q
+(-IS) 376.36 556.22 T
+2 12 Q
+(] [) 396.16 556.22 T
+3 11 Q
+(-IR) 407.15 556.22 T
+2 12 Q
+(] [) 426.95 556.22 T
+3 11 Q
+(-D) 437.94 556.22 T
+6 F
+(]) 451.14 556.22 T
+72 700/G1169 FmPA
+([) 96 530.22 T
+3 F
+(-AD]) 102.6 530.22 T
+2 12 Q
+([) 129 530.22 T
+3 11 Q
+(-J) 133 530.22 T
+2 12 Q
+(] [) 146.2 530.22 T
+3 11 Q
+(-AJ) 157.19 530.22 T
+2 12 Q
+(] [) 176.99 530.22 T
+3 11 Q
+(-L) 187.98 530.22 T
+2 12 Q
+(]) 201.18 530.22 T
+72 674/G1509 FmPA
+(The) 72 504.22 T
+4 F
+(client-file) 93.66 504.22 T
+2 F
+(is the name of the binary log file produced by the client script while) 142.66 504.22 T
+4 F
+(server-file) 471.28 504.22 T
+2 F
+( is) 520.6 504.22 T
+72 648/G1128 FmPA
+(the name of the binary log file produced by the server script. If the) 72 480.22 T
+3 11 Q
+(-c) 394.26 480.22 T
+2 12 Q
+(and) 414.06 480.22 T
+3 11 Q
+(-s) 434.39 480.22 T
+2 12 Q
+( option are not) 447.59 480.22 T
+(specified) 72 456.22 T
+(the) 118.08 456.22 T
+(default) 135.5 456.22 T
+(filenames) 171.58 456.22 T
+(are) 220.99 456.22 T
+3 11 Q
+(client.log) 238.4 456.22 T
+2 12 Q
+(and) 310.46 456.22 T
+3 11 Q
+(server.log) 330.54 456.22 T
+2 12 Q
+(,) 396.54 456.22 T
+(respectively.) 402.3 456.22 T
+(The) 466.04 456.22 T
+4 F
+(output-file) 487.46 456.22 T
+2 F
+(is) 72 432.22 T
+(the) 82.99 432.22 T
+(name) 100.63 432.22 T
+(of) 129.6 432.22 T
+(the) 142.58 432.22 T
+(file) 160.23 432.22 T
+(produced) 179.2 432.22 T
+(by) 226.84 432.22 T
+3 11 Q
+(gengraph.pl) 241.82 432.22 T
+2 12 Q
+(and) 317.4 432.22 T
+(is) 337.7 432.22 T
+(used) 348.69 432.22 T
+(by) 373.67 432.22 T
+(the) 388.65 432.22 T
+(appropriate) 406.29 432.22 T
+(graphing) 463.92 432.22 T
+(tool.*) 509.56 432.22 T
+(The default filename is) 72 408.22 T
+3 11 Q
+( stats.xpl) 182.98 408.22 T
+2 12 Q
+(. The graphing tool is specified by the) 248.98 408.22 T
+3 11 Q
+(-f) 433.96 408.22 T
+2 12 Q
+(option. If no) 453.76 408.22 T
+(graphing tool is specified, the default tool is) 72 384.22 T
+3 11 Q
+(xplot) 286.32 384.22 T
+2 12 Q
+(. The options following the graphing) 319.32 384.22 T
+(specification indicate the data the user is interested in graphing. The kinds of information, which) 72 360.22 T
+(can be graphed, include the following:) 72 336.22 T
+(\245) 96 310.22 T
+3 11 Q
+(-SQ) 114 310.22 T
+2 12 Q
+( Sequence Numbers \050UDP\051 or Accumulated Byte count \050TCP\051) 133.8 310.22 T
+72 454/G1132 FmPA
+(\245) 96 284.22 T
+3 11 Q
+(-DR) 114 284.22 T
+2 12 Q
+( Dropped Packets \050UDP only\051) 133.8 284.22 T
+72 428/G1133 FmPA
+(\245) 96 258.22 T
+3 11 Q
+(-S) 114 258.22 T
+2 12 Q
+( Send Rate) 127.2 258.22 T
+72 402/G1134 FmPA
+(\245) 96 232.22 T
+3 11 Q
+(-R) 114 232.22 T
+2 12 Q
+(Receive Rate) 133.8 232.22 T
+72 376/G1135 FmPA
+(\245) 96 206.22 T
+3 11 Q
+(-IS) 114 206.22 T
+2 12 Q
+( |) 133.8 206.22 T
+3 11 Q
+(-IR) 142.2 206.22 T
+2 12 Q
+( Interarrival times of datagrams as seen by the sender or the receiver) 162 206.22 T
+72 350/G1137 FmPA
+(\245) 96 180.22 T
+3 11 Q
+(-D) 114 180.22 T
+2 12 Q
+(Delay) 133.8 180.22 T
+72 324/G1203 FmPA
+(\245) 96 154.22 T
+3 11 Q
+(-AD) 114 154.22 T
+2 12 Q
+( Average Delay) 133.8 154.22 T
+72 298/G1513 FmPA
+(\245) 96 128.22 T
+3 11 Q
+(-J) 114 128.22 T
+2 12 Q
+( Jitter) 127.2 128.22 T
+72 272/G1514 FmPA
+72 102 540.22 117 C
+0 0 0 1 0 0 0 1 K
+71 109 215 109 2 L
+0.5 H
+2 Z
+0 X
+N
+0 0 612 792 C
+0 0 0 1 0 0 0 1 K
+2 10 Q
+0 X
+(*For) 72 95.33 T
+3 11 Q
+(Gnuplot) 97.49 95.33 T
+7 10 Q
+(,) 143.69 95.33 T
+2 F
+(we produce tw) 152.79 95.33 T
+(o \336les: one named) 211.56 95.33 T
+4 F
+(output-\336le) 287.11 95.33 T
+3 11 Q
+(.dem) 328.22 95.33 T
+2 10 Q
+( and the other) 354.62 95.33 T
+4 F
+(output-\336le) 411.83 95.33 T
+3 11 Q
+(.dat.) 452.94 95.33 T
+72 239/G1249 FmPA
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.16/DEST FmPD2
+246 864/M9.21517.1Level.4.Visualization.Support FmPA
+246 864/I1.1106 FmPA
+FMENDPAGE
+%%EndPage: "16" 17
+%%Page: "17" 18
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+72 749 540 767 R
+7 X
+V
+216 0 396 63 R
+V
+1 12 Q
+0 X
+(17) 299.33 55 T
+2 F
+(\245) 96 712.22 T
+3 11 Q
+(-AJ) 114 712.22 T
+2 12 Q
+(Average Jitter) 140.4 712.22 T
+72 856/G1515 FmPA
+(\245) 96 686.22 T
+3 11 Q
+(-L) 114 686.22 T
+2 12 Q
+( Packet Length) 127.2 686.22 T
+72 830/G1159 FmPA
+(If the time scales and units are appropriate, different parameters of interest can also be combined) 72 660.22 T
+72 804/G1143 FmPA
+(into a single graph by specifying more than one data parameter in the command line. If no) 72 636.22 T
+(parameters of interest are specified, a sequence number plot is created.) 72 612.22 T
+(For further information see the file) 96 586.22 T
+3 11 Q
+(gengraph.pdf) 265.97 586.22 T
+2 12 Q
+(in the) 351.77 586.22 T
+3 11 Q
+(./doc) 381.77 586.22 T
+2 12 Q
+(directory of the TG) 421.37 586.22 T
+72 730/G1196 FmPA
+(distribution.) 72 562.22 T
+0 14 Q
+(5) 205 504.88 T
+(CONCLUDING COMMENTS) 226.78 504.88 T
+72 649/G1063 FmPA
+2 12 Q
+(The TG software is provided \322as is\323 without express or implied warranties. Neither SRI) 96 474.22 T
+72 618/G138 FmPA
+(International) 72 450.22 T
+(\050SRI\051) 136.05 450.22 T
+(nor) 165.44 450.22 T
+(USC) 184.16 450.22 T
+(/ISI) 210.23 450.22 T
+(will) 230.95 450.22 T
+(be) 252.35 450.22 T
+(held) 266.4 450.22 T
+(responsible) 289.79 450.22 T
+(for) 347.18 450.22 T
+(loss) 363.9 450.22 T
+(of) 385.3 450.22 T
+(data) 398.02 450.22 T
+(or) 420.74 450.22 T
+(inaccuracies) 433.46 450.22 T
+(resulting) 495.49 450.22 T
+(from) 72 426.22 T
+(the) 97.64 426.22 T
+(use) 114.62 426.22 T
+(of) 132.93 426.22 T
+(this) 145.24 426.22 T
+(program.) 164.89 426.22 T
+(A) 210.86 426.22 T
+(mailing) 221.84 426.22 T
+(list) 260.83 426.22 T
+(has) 277.81 426.22 T
+(been) 296.12 426.22 T
+(set) 321.09 426.22 T
+(up) 336.74 426.22 T
+(for) 351.05 426.22 T
+(TG) 367.36 426.22 T
+(users.) 385.67 426.22 T
+(Please) 415.64 426.22 T
+(send) 448.61 426.22 T
+(any) 472.92 426.22 T
+(questions) 492.57 426.22 T
+(or) 72 402.22 T
+(bug) 84.56 402.22 T
+(reports) 105.13 402.22 T
+(to) 141.01 402.22 T
+(tg@postel.org.) 152.91 402.22 T
+(To) 226.53 402.22 T
+(join) 242.43 402.22 T
+(the) 263.67 402.22 T
+(mailing) 280.89 402.22 T
+(list,) 320.13 402.22 T
+(send) 340.37 402.22 T
+(a) 364.93 402.22 T
+(message) 372.83 402.22 T
+(to) 416.05 402.22 T
+(tg-request@postel.org.) 427.95 402.22 T
+(If any modifications are made to TG, we request you notify the mailing list so they can be) 72 378.22 T
+(incorporated into the general distribution, as appropriate. The distribution is available at) 72 354.22 T
+3 11 Q
+(http://www.postel.org/services.html) 72 330.22 T
+2 12 Q
+(.) 303 330.22 T
+[/CropBox[0 0 FmDC 612 792 FmDC FmBx]/PAGE FmPD
+[/Dest/P.17/DEST FmPD2
+[/Dest/L/DEST FmPD2
+[/Rect[72 326 317 339]/Border[0 0 0]/Action 2 dict dup begin/Subtype/URI def/URI(http://www.postel.org/services.html)def end/LNK FmPD2
+72 482/I1.1568 FmPA
+[/Page 2/View[/XYZ null 263 864 FmDC exch pop null]/Title(1\024 INTRODUCTION)/OUT FmPD
+[/Page 3/View[/XYZ null 274 712 FmDC exch pop null]/Title(2\024 USER GUIDE)/Count 5/OUT FmPD
+[/Page 4/View[/XYZ null 102 780 FmDC exch pop null]/Title(2.1\024 SOFTWARE DISTRIBUTION HIERARCHY)/OUT FmPD
+[/Page 4/View[/XYZ null 102 476 FmDC exch pop null]/Title(2.2\024 BUILDING THE TG PROGRAM)/OUT FmPD
+[/Page 5/View[/XYZ null 102 732 FmDC exch pop null]/Title(2.3\024 INVOKING THE TG)/OUT FmPD
+[/Page 5/View[/XYZ null 102 420 FmDC exch pop null]/Title(2.4\024 TG SPECIFICATION FILE)/Count -4/OUT FmPD
+[/Page 6/View[/XYZ null 113 612 FmDC exch pop null]/Title(2.4.1\024 Starting Time)/OUT FmPD
+[/Page 7/View[/XYZ null 113 580 FmDC exch pop null]/Title(2.4.2\024 Association Specification)/OUT FmPD
+[/Page 9/View[/XYZ null 113 621 FmDC exch pop null]/Title(2.4.3\024 TG Action List)/OUT FmPD
+[/Page 11/View[/XYZ null 113 804 FmDC exch pop null]/Title(2.4.4\024 Statistical Distributions)/OUT FmPD
+[/Page 12/View[/XYZ null 102 864 FmDC exch pop null]/Title(2.5\024 EXAMPLES)/OUT FmPD
+[/Page 13/View[/XYZ null 285 864 FmDC exch pop null]/Title(3\024 LOG FILE)/Count 3/OUT FmPD
+[/Page 13/View[/XYZ null 102 481 FmDC exch pop null]/Title(3.1\024 LOG FILE HEADER)/OUT FmPD
+[/Page 14/View[/XYZ null 102 704 FmDC exch pop null]/Title(3.2\024 LOG FILE RECORD FORMAT)/Count -3/OUT FmPD
+[/Page 14/View[/XYZ null 326 545 FmDC exch pop null]/Title(Table\0211)/OUT FmPD
+[/Page 16/View[/XYZ null 326 792 FmDC exch pop null]/Title(Table\0212)/OUT FmPD
+[/Page 16/View[/XYZ null 326 766 FmDC exch pop null]/Title(Table\0213)/OUT FmPD
+[/Page 16/View[/XYZ null 102 556 FmDC exch pop null]/Title(3.3\024 INTERNAL LOG FILE FORMAT)/OUT FmPD
+[/Page 17/View[/XYZ null 246 864 FmDC exch pop null]/Title(4\024 Visualization Support)/OUT FmPD
+[/Page 18/View[/XYZ null 227 658 FmDC exch pop null]/Title(5\024 CONCLUDING COMMENTS)/Count 1/OUT FmPD
+[/Page 1/View[/XYZ null 186 609 FmDC exch pop null]/Title(Traffic Generator Software Release Notes)/OUT FmPD
+[/Page 1/View[/XYZ null 298 473 FmDC exch pop null]/Title(Paul E. McKenney)/Count 5/OUT FmPD
+[/Page 1/View[/XYZ null 320 441 FmDC exch pop null]/Title(Dan Y. Lee)/OUT FmPD
+[/Page 1/View[/XYZ null 300 409 FmDC exch pop null]/Title(Barbara A. Denny)/OUT FmPD
+[/Page 1/View[/XYZ null 165 360 FmDC exch pop null]/Title(SRI International and USC/ISI Postel Center for Experimental)/OUT FmPD
+[/Page 1/View[/XYZ null 320 311 FmDC exch pop null]/Title(Networking)/OUT FmPD
+[/Page 1/View[/XYZ null 305 262 FmDC exch pop null]/Title(January 8, 2002)/OUT FmPD
+[ /PageMode /UseOutlines /Page 1 /View [/XYZ null null null] /DOCVIEW FmPD2
+FMENDPAGE
+%%EndPage: "17" 18
+%%Trailer
+FMENDDOCUMENT
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Ascend
+%%Pages: 18
+%%DocumentFonts: Helvetica-Bold
+%%+ Helvetica
+%%+ Times-Roman
+%%+ Courier-Bold
+%%+ Times-Italic
+%%+ Courier-BoldOblique
+%%+ Courier
+%%+ Times-Bold
+%%DocumentNeedsFonts: Helvetica-Bold
+%%+ Helvetica
+%%+ Times-Roman
+%%+ Courier-Bold
+%%+ Times-Italic
+%%+ Courier-BoldOblique
+%%+ Courier
+%%+ Times-Bold
+%%DocumentSuppliedFonts:
+%%EOF
