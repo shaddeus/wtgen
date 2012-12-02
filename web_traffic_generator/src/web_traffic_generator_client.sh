@@ -62,7 +62,7 @@ do
     # ----------------------
     #   Viewing (OFF) Time
     # ----------------------
-    randomWeibull 39.5 92.6                         # Viewing (OFF) Time, FIXME: Nespravne hodnoty
+    randomWeibull 4.67317 43.18939                  # Viewing (OFF) Time, Mean=39.5, S.D.=92.6
     echo ""
     echo "Client is viewing page for $randomWeibullValue Seconds"
     date
