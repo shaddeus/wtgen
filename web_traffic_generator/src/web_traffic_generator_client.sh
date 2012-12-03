@@ -26,7 +26,7 @@ do
     #   Wait for Main Object (HTML)
     # -------------------------------
     echo "Waiting for Main Object (HTML)"
-    ./timelimit -t 10 -T 12 tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1
+    timeout 10 tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1
 
 
     # ----------------

@@ -9,7 +9,7 @@ mkdir -p $TMP_PATH
 # Pri preruseni vrati false, pri dostani nejakeho paketu true 
 short_wait_for_http_request () {
     echo "Short waiting for In-Line Object request"
-    ./timelimit -t 3 -T 4 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1
+    timeout 3 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1
     if [ $? -eq 0 ]; then
         return true
     else
