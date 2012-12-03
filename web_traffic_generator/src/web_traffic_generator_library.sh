@@ -12,9 +12,9 @@ TG_SENDER="on 2 tcp"
 #   tgRun "on 15 tcp ..." &
 #
 tgRun () {
-    echo ""
     echo "Try TG: $1"
-    while ( ! (echo "$1" | ./tg -f &> /dev/null) )    # zkousi to odeslat, dokud se mu to opravdu nepovede
+    echo "$1" | ./tg &> /dev/null
+    while [ $? -ne 0 ]    # zkousi to odeslat, dokud se mu to opravdu nepovede
     do
         if [ $? -eq 134 ]; then
             echo "On other side is not running TG Server, we will exit..."
@@ -27,8 +27,8 @@ tgRun () {
             echo "We got unexpected error no.$? at TG: $1"
             exit $?
         fi
+        echo "$1" | ./tg &> /dev/null
     done
-    echo ""
     echo "Successfully TG: $1"
     exit 0 # this function is forked from script
 }
