@@ -7,7 +7,8 @@ echo ""
 echo "Web Traffic Generator: CLIENT"
 echo ""
 
-tgRun "on 5 tcp $IP_CLIENT.$PORT server at 1.1 wait" &
+tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
+sleep 15
 echo "Recieving TG is starting"
 
 # Main loop
@@ -19,7 +20,7 @@ do
     randomLognormal 5.886805 0.000818831            # Request Size: Mean=360.4, S.D.=106.5
     echo ""
     echo "Request Size $randomLognormalValueInteger Bytes"
-    tgRun "$TG_SENDER arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
+    tgRun "$TG_SENDER $IP_SERVER.$PORT arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
     
     
     # -------------------------------
@@ -55,7 +56,7 @@ do
     do
         randomGamma 0.344 2.5                       # In-Line Inter Arrival Time: Mean=0.86, S.D.=2.15
         randomLognormal 5.886805 0.000818831        # Request Size: Mean=360.4, S.D.=106.5
-        tgRun "$TG_SENDER at $randomGammaValue arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
+        tgRun "$TG_SENDER $IP_SERVER.$PORT at $randomGammaValue arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
     done
 
 

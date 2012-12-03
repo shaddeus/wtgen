@@ -21,7 +21,8 @@ echo ""
 echo "Web Traffic Generator: SERVER"
 echo ""
 
-tgRun "on 5 tcp $IP_SERVER.$PORT server at 1.1 wait" &
+tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
+sleep 15
 echo "Recieving TG is starting"
 
 # Main loop
@@ -39,7 +40,7 @@ do
     randomLognormal 9.2788240598 0.0002182073       # Main Object Size: Mean=10710, S.D.=25032
     echo ""
     echo "Transfer Main Object of size $randomLognormalValueInteger Bytes"
-    tgRun "$TG_SENDER arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
+    tgRun "$TG_SENDER $IP_CLIENT.$PORT arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
 
     
     # -------------------
@@ -60,7 +61,7 @@ do
         numberOfInLineObjectsRequested=$(($numberOfInLineObjectsRequested+1))
         if [ $numberOfInLineObjectsRequested -le $numberOfNonCachedInLineObjects ]; then
             randomLognormal 8.9554328042 0.0020940877   # In-Line Object Size: Mean=7758, S.D.=126168
-            tgRun "$TG_SENDER arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
+            tgRun "$TG_SENDER $IP_CLIENT.$PORT arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
             echo "    Transfer In-Line Object of size $randomLognormalValueInteger Bytes"
         else
             echo "    In-Line Object is cached."

@@ -3,7 +3,7 @@
 IP_CLIENT="192.168.1.2"
 IP_SERVER="192.158.1.3"
 PORT="4322"
-TG_SENDER="on 5 tcp $IP_SERVER.$PORT"
+TG_SENDER="on 5 tcp"
 
 #
 # Zajisti, aby TG opravdu zpracovalo parametry
@@ -12,10 +12,12 @@ TG_SENDER="on 5 tcp $IP_SERVER.$PORT"
 #   tgRun "on 15 tcp ..." &
 #
 tgRun () {
+    echo ""
+    echo "Try TG: $1"
     while ( ! (echo "$1" | ./tg -f &> /dev/null) )    # zkousi to odeslat, dokud se mu to opravdu nepovede
     do
         echo ""
-        echo "Try send again send TG $1"
+        echo "Try again TG: $1"
         sleep 3
     done
     echo ""
