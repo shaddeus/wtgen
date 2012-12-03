@@ -4,8 +4,9 @@ MY_DIR=`dirname $0`
 source $MY_DIR/web_traffic_generator_library.sh
 
 echo ""
-echo "Web Traffic Generator: CLIENT"
-echo ""
+echo "---------------------------------"
+echo "  Web Traffic Generator: CLIENT"
+echo "---------------------------------"
 
 tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
 sleep 15
@@ -17,7 +18,7 @@ do
     # ----------------------------------
     #   Request for Main Object (HTML)
     # ----------------------------------
-    randomLognormal 5.886805 0.000818831            # Request Size: Mean=360.4, S.D.=106.5
+    randomLognormal 5.8453551293 0.289342            # Request Size: Mean=360.4, S.D.=106.5
     echo ""
     echo "Request Size $randomLognormalValueInteger Bytes"
     tgRun "$TG_SENDER $IP_SERVER.$PORT arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
@@ -37,7 +38,7 @@ do
     # ----------------
     #   Parsing Time
     # ----------------
-    randomGamma 0.0903743316 1.4384615385           # Parsing Time: Mean=0.13, S.D.=0.187
+    randomGamma 0.4832851955 0.2689923077          # Parsing Time: Mean=0.13, S.D.=0.187
     echo ""
     echo "Client is parsing Main page for $randomGammaValue Seconds"
     date
@@ -50,7 +51,7 @@ do
     # -------------------------------
     
     # Counting In-Line Objects
-    randomGamma 2.7019736842 2.0540540541           # Number of In-Line Objects: Mean=5.55, S.D.=11.4
+    randomGamma 0.2370152355 23.4162162162          # Number of In-Line Objects: Mean=5.55, S.D.=11.4
     numberOfInLineObjects=$randomGammaValueInteger
     echo ""
     echo "Number of requested in-line objects: $numberOfInLineObjects"
@@ -58,8 +59,8 @@ do
     # Sending requests for In-Line Objects
     for(( i=0 ; i<$numberOfInLineObjects ; i++ ))
     do
-        randomGamma 0.344 2.5                       # In-Line Inter Arrival Time: Mean=0.86, S.D.=2.15
-        randomLognormal 5.886805 0.000818831        # Request Size: Mean=360.4, S.D.=106.5
+        randomGamma 0.16 5.375                      # In-Line Inter Arrival Time: Mean=0.86, S.D.=2.15
+        randomLognormal 5.8453551293 0.289342       # Request Size: Mean=360.4, S.D.=106.5
         tgRun "$TG_SENDER $IP_SERVER.$PORT at $randomGammaValue arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
     done
 

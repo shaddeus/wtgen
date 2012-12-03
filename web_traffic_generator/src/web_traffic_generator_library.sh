@@ -24,12 +24,12 @@ tgRun () {
             echo "Try again TG: $1"
             sleep 3
         else
-            echo "We got unexpected error no.$?"
+            echo "We got unexpected error no.$? at TG: $1"
             exit $?
         fi
     done
     echo ""
-    echo "Successfully execute via TG: $1"
+    echo "Successfully TG: $1"
     exit 0 # this function is forked from script
 }
 
@@ -54,8 +54,8 @@ randomWeibull () {
 }
 
 # parametry:
-#   1) alpha (shape ~ mean)
-#   2) beta (scale ~ SD)
+#   1) alpha
+#   2) beta
 randomGamma () {
     rgg=`./rg -I $nextInit -D Gamma -a $1 -b $2 -O "%.5f"`
     randomGammaValue=`echo $rgg | awk -F' :' '{print $1}'`
