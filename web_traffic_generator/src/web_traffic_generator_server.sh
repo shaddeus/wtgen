@@ -57,7 +57,7 @@ do
     echo "Number of non-cached in-line objects $numberOfNonCachedInLineObjects"
 
     numberOfInLineObjectsRequested=0
-    while [ short_wait_for_http_request ]
+    while (short_wait_for_http_request)
     do
         echo "  We got request for In-Line Object"
         numberOfInLineObjectsRequested=$(($numberOfInLineObjectsRequested+1))
