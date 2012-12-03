@@ -9,8 +9,8 @@ mkdir -p $TMP_PATH
 # Pri preruseni vrati false, pri dostani nejakeho paketu true 
 short_wait_for_http_request () {
     echo "Short waiting for In-Line Object request:"
-    echo "  timeout 3 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1"
-    timeout 3 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1
+    echo "  timeout 10 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null"
+    timeout 10 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null
     if [ $? -eq 0 ]; then
         return 1
     else
@@ -36,8 +36,8 @@ do
     # Waiting for request for Main Object
     echo ""
     echo "Waiting for Main Object request:"
-    echo "  tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1"
-    tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1
+    echo "  tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null"
+    tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null
 
     # Sending Main Object
     randomLognormal 8.3459005226 1.36604            # Main Object Size: Mean=10710, S.D.=25032
@@ -58,7 +58,7 @@ do
     echo "Number of non-cached in-line objects $numberOfNonCachedInLineObjects"
 
     numberOfInLineObjectsRequested=0
-    while ( short_wait_for_http_request )
+    while [ short_wait_for_http_request -eq 1 ]
     do
         echo "  We got request for In-Line Object"
         numberOfInLineObjectsRequested=$(($numberOfInLineObjectsRequested+1))
