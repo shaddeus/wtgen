@@ -37,7 +37,7 @@ tgRun () {
 #   1) mean
 #   2) standard deviation    
 randomLognormal () {
-    rgln=`./rg -I $nextInit -D Lognormal -m $1 -s $2 -O "%.0f"`
+    rgln=`./rg -I $nextInit -D Lognormal -m $1 -s $2`
     randomLognormalValue=`echo $rgln | awk -F' :' '{print $1}'`
     randomLognormalValueInteger=`echo $randomLognormalValue | sed 's/\.[0-9]*$//g'`
     nextInit=`echo $rgln | awk -F' :' '{print $2}'`
@@ -47,7 +47,7 @@ randomLognormal () {
 #   1) alpha
 #   2) beta
 randomWeibull () {
-    rgw=`./rg -I $nextInit -D Weibull -a $1 -b $2 -O "%.0f"`
+    rgw=`./rg -I $nextInit -D Weibull -a $1 -b $2`
     randomWeibullValue=`echo $rgw | awk -F' :' '{print $1}'`
     randomWeibullValueInteger=`echo $randomWeibullValue | sed 's/\.[0-9]*$//g'`
     nextInit=`echo $rgw | awk -F' :' '{print $2}'`
@@ -57,7 +57,7 @@ randomWeibull () {
 #   1) alpha (shape ~ mean)
 #   2) beta (scale ~ SD)
 randomGamma () {
-    rgg=`./rg -I $nextInit -D Gamma -a $1 -b $2 -O "%.0f"`
+    rgg=`./rg -I $nextInit -D Gamma -a $1 -b $2`
     randomGammaValue=`echo $rgg | awk -F' :' '{print $1}'`
     randomGammaValueInteger=`echo $randomGammaValue | sed 's/\.[0-9]*$//g'`
     nextInit=`echo $rgg | awk -F' :' '{print $2}'`
@@ -66,7 +66,7 @@ randomGamma () {
 # parametry:
 #   1) pravdepodobnost
 randomGeometric () {
-    rggeom=`./rg -I $nextInit -D Geometric -p $1 -O "%.0f"`
+    rggeom=`./rg -I $nextInit -D Geometric -p $1`
     randomGeometricValue=`echo $rggeom | awk -F' :' '{print $1}'`
     randomGeometricValueInteger=`echo $randomGeometricValue | sed 's/\.[0-9]*$//g'`
     nextInit=`echo $rggeom | awk -F' :' '{print $2}'`

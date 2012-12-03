@@ -26,8 +26,9 @@ do
     # -------------------------------
     #   Wait for Main Object (HTML)
     # -------------------------------
-    echo "Waiting for Main Object (HTML)"
-    timeout 10 tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1
+    echo "Waiting for Main Object (HTML):"
+    echo "tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1"
+    tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1
 
 
     # ----------------
