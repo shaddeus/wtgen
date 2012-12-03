@@ -3,7 +3,7 @@
 IP_CLIENT="192.168.1.2"
 IP_SERVER="192.158.1.3"
 PORT="4322"
-TG_SENDER="on 5 tcp"
+TG_SENDER="on 15 tcp"
 
 #
 # Zajisti, aby TG opravdu zpracovalo parametry
@@ -16,9 +16,17 @@ tgRun () {
     echo "Try TG: $1"
     while ( ! (echo "$1" | ./tg -f &> /dev/null) )    # zkousi to odeslat, dokud se mu to opravdu nepovede
     do
-        echo ""
-        echo "Try again TG: $1"
-        sleep 3
+        if [ $? -eq 134 ]; then
+            echo "On other side is not running TG Server, we will exit..."
+            exit 134
+        elif [ $? -eq 255 ]; then
+            echo ""
+            echo "Try again TG: $1"
+            sleep 3
+        else
+            echo "We got unexpected error no.$?"
+            exit $?
+        fi
     done
     echo ""
     echo "Successfully execute via TG: $1"
