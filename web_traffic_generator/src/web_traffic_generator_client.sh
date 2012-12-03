@@ -28,8 +28,11 @@ do
     # -------------------------------
     echo "Waiting for Main Object (HTML):"
     echo "tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1"
-    tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1
-
+    timeout 10 tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1
+    if [ $? -ne 0 ]; then
+        echo "We did not get a Main Object, so we try it request again."
+        continue
+    fi
 
     # ----------------
     #   Parsing Time
