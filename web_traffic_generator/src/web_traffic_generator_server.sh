@@ -12,9 +12,9 @@ short_wait_for_http_request () {
     echo "  timeout 3 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1"
     timeout 3 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1
     if [ $? -eq 0 ]; then
-        return true
+        return 1
     else
-        return false
+        return 0
     fi
 }
 
