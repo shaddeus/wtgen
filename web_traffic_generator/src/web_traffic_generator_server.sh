@@ -22,6 +22,7 @@ echo ""
 echo "---------------------------------"
 echo "  Web Traffic Generator: SERVER"
 echo "---------------------------------"
+echo ""
 
 tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
 sleep 15
@@ -34,14 +35,12 @@ do
     #   Main Object (HTML)
     # ----------------------
     # Waiting for request for Main Object
-    echo ""
     echo "Waiting for Main Object request:"
     echo "  tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null"
     tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null
 
     # Sending Main Object
     randomLognormal 8.3459005226 1.36604            # Main Object Size: Mean=10710, S.D.=25032
-    echo ""
     echo "Transfer Main Object of size $randomLognormalValueInteger Bytes"
     tgRun "$TG_SENDER $IP_CLIENT.$PORT arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
 
@@ -58,7 +57,8 @@ do
     echo "Number of non-cached in-line objects $numberOfNonCachedInLineObjects"
 
     numberOfInLineObjectsRequested=0
-    while [ short_wait_for_http_request -eq 1 ]
+    short_wait_for_http_request
+    while [ $? -eq 1 ]
     do
         echo "  We got request for In-Line Object"
         numberOfInLineObjectsRequested=$(($numberOfInLineObjectsRequested+1))
@@ -69,7 +69,7 @@ do
         else
             echo "    In-Line Object is cached."
         fi
+        short_wait_for_http_request
     done
-
 done
 

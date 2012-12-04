@@ -7,6 +7,7 @@ echo ""
 echo "---------------------------------"
 echo "  Web Traffic Generator: CLIENT"
 echo "---------------------------------"
+echo ""
 
 tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
 sleep 15
@@ -19,7 +20,6 @@ do
     #   Request for Main Object (HTML)
     # ----------------------------------
     randomLognormal 5.8453551293 0.289342            # Request Size: Mean=360.4, S.D.=106.5
-    echo ""
     echo "Request Size $randomLognormalValueInteger Bytes"
     tgRun "$TG_SENDER $IP_SERVER.$PORT arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
     
@@ -39,7 +39,6 @@ do
     #   Parsing Time
     # ----------------
     randomGamma 0.4832851955 0.2689923077          # Parsing Time: Mean=0.13, S.D.=0.187
-    echo ""
     echo "Client is parsing Main page for $randomGammaValue Seconds"
     date
     ./microsleep $randomGammaValue
@@ -53,7 +52,6 @@ do
     # Counting In-Line Objects
     randomGamma 0.2370152355 23.4162162162          # Number of In-Line Objects: Mean=5.55, S.D.=11.4
     numberOfInLineObjects=$randomGammaValueInteger
-    echo ""
     echo "Number of requested in-line objects: $numberOfInLineObjects"
     
     # Sending requests for In-Line Objects
@@ -69,7 +67,6 @@ do
     #   Viewing (OFF) Time
     # ----------------------
     randomWeibull 4.67317 43.18939                  # Viewing (OFF) Time, Mean=39.5, S.D.=92.6
-    echo ""
     echo "Client is viewing page for $randomWeibullValue Seconds"
     date
     ./microsleep $randomWeibullValue
