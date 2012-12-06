@@ -60,14 +60,14 @@ do
     short_wait_for_http_request
     while [ $? -eq 1 ]
     do
-        echo "  We got request for In-Line Object"
+        echo "We got request for In-Line Object"
         numberOfInLineObjectsRequested=$(($numberOfInLineObjectsRequested+1))
         if [ $numberOfInLineObjectsRequested -le $numberOfNonCachedInLineObjects ]; then
             randomLognormal 6.1657058475 2.36253   # In-Line Object Size: Mean=7758, S.D.=126168
             tgRun "$TG_SENDER $IP_CLIENT.$PORT arrival 0 length $randomLognormalValueInteger data $randomLognormalValueInteger" &
-            echo "    Transfer In-Line Object of size $randomLognormalValueInteger Bytes"
+            echo "Transfer In-Line Object of size $randomLognormalValueInteger Bytes"
         else
-            echo "    In-Line Object is cached."
+            echo "In-Line Object is cached."
         fi
         short_wait_for_http_request
     done

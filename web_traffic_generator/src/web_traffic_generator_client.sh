@@ -28,7 +28,6 @@ do
     #   Wait for Main Object (HTML)
     # -------------------------------
     echo "Waiting for Main Object (HTML):"
-    echo "tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1 &> /dev/null"
     timeout 10 tcpdump -i any src $IP_SERVER and dst $IP_CLIENT and port $PORT -c 1 &> /dev/null
     if [ $? -ne 0 ]; then
         echo "We did not get a Main Object, so we try it request again"

@@ -19,7 +19,7 @@ tgRun () {
         if [ $? -eq 134 ]; then
             echo "On other side is not running TG Server, we will exit..."
             exit 134
-        elif [ $? -eq 255 ]; then
+        elif [ $? -eq 255 -o $? -eq 1 ]; then
             echo ""
             echo "Try again TG: $1"
             sleep 3
@@ -34,8 +34,8 @@ tgRun () {
 }
 
 # parametry:
-#   1) mean
-#   2) standard deviation    
+#   1) mu
+#   2) sigma squared
 randomLognormal () {
     rgln=`./rg -I $nextInit -D Lognormal -m $1 -s $2 -O "%.5f"`
     randomLognormalValue=`echo $rgln | awk -F' :' '{print $1}'`
