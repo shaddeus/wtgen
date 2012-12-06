@@ -7,7 +7,6 @@ source $MY_DIR/library.sh
 # If timeouted then return false
 short_wait_for_http_request () {
     echo "Short waiting for In-Line Object request:"
-    echo "  timeout 10 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null"
     timeout 10 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null
     if [ $? -eq 0 ]; then
         return 1
