@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MY_DIR=`dirname $0`
-source $MY_DIR/web_traffic_generator_library.sh
+source $MY_DIR/library.sh
 
 echo ""
 echo "---------------------------------"
@@ -9,9 +9,7 @@ echo "  Web Traffic Generator: CLIENT"
 echo "---------------------------------"
 echo ""
 
-tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
-sleep 15
-echo "Recieving TG is starting"
+startTgServer
 
 # Main loop
 while (true)

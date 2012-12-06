@@ -1,12 +1,10 @@
 #!/bin/bash
 
 MY_DIR=`dirname $0`
-source $MY_DIR/web_traffic_generator_library.sh
+source $MY_DIR/library.sh
 
-TMP_PATH="/tmp/web_traffic_generator"
-mkdir -p $TMP_PATH
-
-# Pri preruseni vrati false, pri dostani nejakeho paketu true 
+# If we get any packet then return true
+# If timeouted then return false
 short_wait_for_http_request () {
     echo "Short waiting for In-Line Object request:"
     echo "  timeout 10 tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null"
@@ -24,9 +22,7 @@ echo "  Web Traffic Generator: SERVER"
 echo "---------------------------------"
 echo ""
 
-tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
-sleep 15
-echo "Recieving TG is starting"
+startTgServer
 
 # Main loop
 while (true)
@@ -36,7 +32,6 @@ do
     # ----------------------
     # Waiting for request for Main Object
     echo "Waiting for Main Object request:"
-    echo "  tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null"
     tcpdump -i any src $IP_CLIENT and dst $IP_SERVER and port $PORT -c 1 &> /dev/null
 
     # Sending Main Object
@@ -68,6 +63,7 @@ do
             echo "Transfer In-Line Object of size $randomLognormalValueInteger Bytes"
         else
             echo "In-Line Object is cached."
+            # Here we could transfer to client message sized of request
         fi
         short_wait_for_http_request
     done

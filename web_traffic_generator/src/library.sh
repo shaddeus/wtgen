@@ -33,6 +33,12 @@ tgRun () {
     exit 0 # this function is forked from script
 }
 
+startTgServer () {
+    tgRun "on 15 tcp 0.0.0.0.$PORT server at 1.1 wait" &
+    sleep 15
+    echo "Recieving TG server is running"
+}
+
 # parametry:
 #   1) mu
 #   2) sigma squared
